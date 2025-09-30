@@ -85,6 +85,7 @@ const Portfolio: React.FC = () => {
     { img: "/iamge/11 (3).webp", alt: "Social Media Work 11", category: "Social Media Marketing" },
     { img: "/iamge/9 (3).webp", alt: "Social Media Work 12", category: "Social Media Marketing" },
     
+    
 
     // ✅ Video Animation (subcategories with 9 each)
     ...[
@@ -165,7 +166,7 @@ const Portfolio: React.FC = () => {
 
     if (activeCategory === "Video Animation") {
       return activeSubCategory
-        ? work.category === "Video Animation" && work.subCategory === activeSubCategory
+        ? work.category === "Video Animation" && work.category === activeSubCategory
         : false;
     }
 

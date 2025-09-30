@@ -44,7 +44,7 @@ export default function Header() {
         </div>
 
         <Link href="/pricing" className="hover:text-[#2f92ff] transition">PRICING</Link>
-        <Link href="/packages" className="hover:text-[#2f92ff] transition">COMBO PACKAGES</Link>
+        <Link href="/packages" className="hover:text-[#2f92ff] transition">COMBOPACKAGES</Link>
         <Link href="/contact" className="hover:text-[#2f92ff] transition">CONTACT US</Link>
       </nav>
 

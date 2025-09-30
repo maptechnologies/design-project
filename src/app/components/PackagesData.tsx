@@ -1,0 +1,1085 @@
+"use client";
+import React, { useState } from "react";
+import Slider from "react-slick";
+import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Awards from "../components/Awards";//
+// import ContactForm from "../components/Form";
+// import AnimatedContact from "../components/Contact";
+// import Footer from "../components/Footer";
+
+
+
+
+const categories = [
+  "Logo Design",
+  "Web Design",
+  "Video Animation",
+  "Branding",
+  "E-Commerce",
+  "Social Marketing",
+  "NFT Design",
+  "Marketing Collateral",
+  "SEO",
+];
+
+// ✅ Dummy data for each category
+const packagesData: Record<string, any[]> = {
+  "Logo Design": [
+    {
+      price: "$49",
+      title: "Basic Logo",
+      features: [
+        "3 Custom Logo Design Concepts", "1 Dedicated Designer", "4 Revisions"
+        ,"48 to 72 hours TAT","100% Unique Design Guarantee","100% Satisfaction Guarantee",
+        "Money Back Guarantee","Unlimited Revisions"
+      ],
+    },
+    {
+      price: "$129",
+      title: "Startup Logo",
+      features: [
+        "5 Custom Logo Design Concepts","By 2 Designers","By 2 Designers","48 to 72 hours TAT",
+        "All Final Files Format (AI, PSD, EPS, PNG, GIF, JPG, PDF)","100% Satisfaction Guarantee","100% Unique Design Guarantee",
+        "Money Back Guarantee ","Unlimited Revisions",
+      ],
+    },
+    {
+      price: "$199",
+      title: "Professional Logo",
+      features: [
+        "UNLIMITED Logo Design Concepts","By 4 Designers","UNLIMITED Revisions","Stationary Design (Business Card, Letterhead, Envelope)",
+        "FREE MS Word Letterhead","48 to 72 hours TAT","All Final Files Format (AI, PSD, EPS, PNG, GIF, JPG, PDF)",
+        "100% Satisfaction Guarantee","100% Unique Design Guarantee","Money Back Guarantee ","Unlimited Revisions",
+    
+      ],
+    },
+    {
+      price: "$249",
+      title: "Elite Logo",
+      features: [
+        "UNLIMITED Logo Design Concepts","By 5 Award Winning Designers","Icon Design",
+        "UNLIMITED Revisions","FREE MS Word Letterhead","Free Email Signature","All Final Files Format (AI, PSD, EPS, PNG, GIF, JPG, PDF)",
+        "100% Satisfaction Guarantee","100% Unique Design Guarantee","Money Back Guarantee ","Unlimited Revisions",
+        "48 to 72 hours TAT",
+    
+      ],
+    },
+    {
+      price: "$349",
+      title: "Business Logo",
+      features: [
+               "UNLIMITED Logo Design Concepts","By 8 Award Winning Designers","UNLIMITED Revisions","2 Stationary Design Sets (Business Card, Letterhead, Envelope)",
+        "Icon Design","Double Sided Flyer Design / Bi-Fold Brochure ","FREE MS Word Letterhead","Free Email Signature",
+        "All Final Files Format (AI, PSD, EPS, PNG, GIF, JPG, PDF)","100% Ownership Rights","100% Satisfaction Guarantee",
+        "100% Unique Design Guarantee",
+    
+      ],
+    },
+    {
+      price: "$499",
+      title: "Gold Logo",
+      features: [
+        "UNLIMITED Logo Design Concepts","By 8 Award Winning Designers","Icon Design","UNLIMITED Revisions"
+        ,"2 Stationary Design Sets (Business Card, Letterhead, Envelope)","FREE MS Word Letterhead","Free Email Signature",
+        "3 Page Custom Website","2 Stock Photos","jQuery Slider","All Final Files Format (AI, PSD, EPS, PNG, GIF, JPG, PDF)",
+        "100% Ownership Rights","100% Satisfaction Guarantee","100% Unique Design Guarantee","Money Back Guarantee ",
+        "Unlimited Revisions",
+      ],
+    },
+  ],
+  "Web Design": [
+    {
+      price: "$299",
+      title: "Basic-website ",
+      features: [
+        "1 Page Website Design",
+        "HTML Based",
+        "1 Banner Design",
+        "Contact/Query Form",
+        "3 Revisions",
+        "Complete W3C Certified HTML",
+        "Complete Deployment",
+        " Value Added Services",
+        "Complete Source Files",
+        "Dedicated Project Manager",
+        "100% Ownership Rights",
+        "100% Satisfaction Guarantee",
+        "Money Back Guarantee *",
+        "Money Back Guarantee *",
+      ],
+    },
+    {
+      price: "$549",
+      title: "Startup website",
+      features: [
+         "3 Page Website Design",
+        "HTML Based",
+        "Hover Effects",
+        "2 Banner Designs",
+        "Sliding Banner",
+        "2 Stock Photos (You can provide us more)",
+        "Contact/Query Form",
+        "3 Professional Email ID’s",
+        "6 Revisions",
+        "Complete W3C Certified HTML",
+        "Complete Deployment",
+        "– Value Added Services",
+        "Complete Source Files",
+        "Dedicated Project Manager",
+        "100% Ownership Rights",
+        "100% Satisfaction Guarantee",
+        "Money Back Guarantee *",
+        "Unlimited Revisions",
+        "*NO MONTHLY OR ANY HIDDEN FEE*",
+      ],
+    },
+    {
+      price: "$799",
+      title: "professional website",
+      features: [
+         "Up to 5 Pages Website Design",
+        "3 Stock Photos (You can provide us more)",
+        "3 Banner Designs",
+        "Sliding Banner",
+        "Hover Effects",
+        "Content Management System (WordPress)",
+        "5 Professional Email ID’s",
+        "Search Engine Submission",
+        "Unlimited Revisions",
+        "Complete W3C Certified HTML",
+        "Industry specified Team of Expert Designers and Developers",
+        "Complete Deployment",
+        "– Value Added Services",
+        "Complete Source Files",
+        "Dedicated Project Manager",
+        "100% Ownership Rights",
+        "100% Satisfaction Guarantee",
+        "Money Back Guarantee *",
+        "Unlimited Revisions",
+        "Unlimited Revisions",
+      ],
+    },
+    {
+      price: "$699",
+      title: "Elite website ",
+      features: [
+               "Unique 5 Pages Website Design",
+        "Custom, Interactive, Dynamic &amp; High End Web Design",
+        "Custom WordPress Development",
+        "5 Stock Images",
+        "5 Banner Designs",
+        "Sliding Banners",
+        "Unlimited Revisions",
+        "Special Hoover Effects",
+        "Content Management System (WordPress)",
+        "Mobile Responsive",
+        "Online Appointment/Booking/Scheduling/Online Ordering Integration (If Required)",
+        "5 Professional Email ID’s",
+        "Google Friendly Sitemap",
+        "Search Engine Submission",
+        "Complete W3C Certified HTML",
+        "Industry specified Team of Expert Designers and Developers",
+        "Complete Deployment",
+        "– Value Added Services",
+        "Complete Source Files",
+        "Dedicated Project Manager",
+        "100% Ownership Rights",
+        "100% Satisfaction Guarantee",
+        "Money Back Guarantee *",
+        "Unlimited Revisions",
+        "*NO MONTHLY OR ANY HIDDEN FEE*",
+        
+      ],
+    },
+    {
+      price: "$1999",
+      title: "Identity website",
+      features: [ "10 Unique Pages Website Design",
+        "Custom, Interactive, Dynamic &amp; High End Design",
+        "Customize WordPress (or) PHP Development",
+        "Interactive Sliding Banners",
+        "10 Stock Images",
+        "10 Banner Designs",
+        "Special Hoover Effects",
+        "Unlimited Revisions",
+        "Content Management System (WordPress or Custom)",
+        "Mobile Responsive",
+        "Online Appointment/Booking/Scheduling/Online Ordering Integration (Optional)",
+        "Online Payment Integration (Optional)",
+        "10 Professional Email ID’s",
+        "Google Friendly Sitemap",
+        "Search Engine Submission",
+        "Complete W3C Certified HTML",
+        "Industry specified Team of Award Winning Designers and Developers",
+        "Complete Deployment",
+        "– Value Added Services",
+        "Complete Source Files",
+        "Dedicated Project Manager",
+        "100% Ownership Rights",
+        "100% Satisfaction Guarantee",
+        "Money Back Guarantee *",
+        "Unlimited Revisions",
+        "*NO MONTHLY OR ANY HIDDEN FEE*",],
+    },
+    {
+      price: "$3499",
+      title: "Corporate website",
+      features: [
+        "15 to 20 Unique Pages Website Design",
+        "Custom Made, Interactive, Dynamic &amp; High End Design",
+        "Customized WordPress &amp; PHP Development",
+        "Up to 15 Custom Made Banner Designs",
+        "15 Stock Images",
+        "Unlimited Revisions",
+        "Special Hoover Effects",
+        "Content Management System",
+        "Online Appointment/Booking/Scheduling/Online Ordering Integration (Optional)",
+        "Online Payment Integration (Optional)",
+        "Multi Lingual (Optional)",
+        "Custom Dynamic Forms (Optional)",
+        "Signup Area (For Newsletters, Offers etc.)",
+        "Search Bar",
+        "Live Feeds of Social Networks integration (Optional)",
+        "Mobile Responsive",
+        "Up to 15 Professional Email ID’s",
+        "Google Friendly Sitemap",
+        "Search Engine Submission",
+        "Complete W3C Certified HTML",
+        "Industry specified Team of Award Winning Designers and Developers",
+        "Complete Deployment",
+        "– Value Added Services",
+        "Complete Source Files",
+        "Dedicated Project Manager",
+        "100% Ownership Rights",
+        "100% Satisfaction Guarantee",
+        "Money Back Guarantee *",
+        "Unlimited Revisions",
+        "*NO MONTHLY OR ANY HIDDEN FEE*",
+      ],
+    },
+  ],
+  "Video Animation": [
+    {
+      price: "$999",
+      title: "Starter video",
+      features: [
+        "30 Second Video",
+        "Professional Script",
+        "Storyboard",
+        "Animation",
+        "Voice - Over &amp; Sound Effects",
+        "Unlimited Revisions",
+        "4 weeks Delivery",
+        "",
+        "",
+        "",
+        "",
+      ],
+    },
+    {
+      price: "$2198",
+      title: "Classic video",
+      features: [
+         "60 Second Video",
+        "Professional Script",
+        "Sample Theme",
+        "Storyboard",
+        "Animation",
+        "Voice - Over &amp; Sound Effects",
+        "5 weeks Delivery",
+      ],
+    },
+    {
+      price: "$2489",
+      title: "Premium video",
+      features: [
+         "120 Second Video",
+        "Professional Script",
+        "Sample Theme",
+        "Storyboard",
+        "Animation",
+        "Voice - Over &amp; Sound Effects",
+      ],
+    },
+    {
+      price: "$4598",
+      title: "unlimited video",
+      features: [
+          "120 Second Video",
+          "Professional Script",
+          "Sample Theme",
+          "Storyboard",
+          "Animation",
+          "Voice - Over &amp; Sound Effects",
+        
+      ],
+    },
+    
+  ],
+  "Branding": [
+    {
+      price: "$198",
+      title: "Startup Collateral",
+      features: [
+        "Startup Collateral",
+        "FREE Fax Template",
+        "Print Ready Formats",
+        "UNLIMITED Revisions",
+        "100% Satisfaction Guarantee",
+        "Money Back Guarantee *",
+        "Unlimited Revisions",
+      ],
+    },
+    {
+      price: "788",
+      title: "Collateral classic",
+      features: [
+          "2 Stationery Design Set",
+          "UNLIMITED Revisions",
+          "Flyer Design",
+          "Brochure Design (Bi-fold/Tri-fold)",
+          "100% Satisfaction Guarantee",
+          "Money Back Guarantee *",
+          "Unlimited Revisions",
+          "",
+      ],
+    },
+    {
+      price: "$1188",
+      title: "Premium collateral",
+      features: [
+        "2 Stationery Design Set",
+        "Packaging Design",
+        "UNLIMITED Revisions",
+        "T-Shirt Design",
+        "100% Satisfaction Guarantee",
+        "Money Back Guarantee *",
+        "Unlimited Revisions",
+      ],
+    },
+    {
+      price: "$1088",
+      title: "Unlimited collateral",
+      features: [
+        "2 Stationery Design Set",
+        "Menu Card Design",
+        "T-Shirt Design",
+        "1 Banner Design",
+        "100% Satisfaction Guarantee",
+        "Money Back Guarantee *",
+        "Unlimited Revisions",
+      ],
+    },
+  ],
+  "E-Commerce": [
+    {
+      price: "$999",
+      title: "E-commerce-website",
+      features: [
+        "E-Commerce Website Design and Development",
+        "Theme Based Design",
+        "2 Banner Designs",
+        "Sliding Banner",
+        "3 Stock Photos",
+        "06 Revisions",
+        "Hover Effects",
+        "Up to 10 Products",
+        "Up to 3 Categories",
+        "Content/Inventory Management System",
+        "Easy Product Search Bar",
+        "Shopping Cart Integration",
+        "Payment Module Integration",
+        "Direct Checkout",
+        "Sign up Checkout",
+        "Tax calculator Integration",
+        "Shipping calculator Integration",
+        "Wishlist",
+        "Complete W3C Validation",
+        "Dedicated Team of Designers and Developers",
+        "Complete Deployment",
+        "– Value Added Services",
+        "Complete Source Files",
+        "Dedicated Project Manager",
+        "100% Ownership Rights",
+        "100% Satisfaction Guarantee",
+        "Money Back Guarantee *",
+        "Unlimited Revisions",
+        " *NO MONTHLY OR ANY HIDDEN FEE*",
+        
+      ],
+    },
+    {
+      price: "$1399",
+      title: "E-commerce-startup",
+      features: [
+        "E-Commerce Website Design and Development",
+        "High-end Theme Based Design",
+        "5 Banner Designs",
+        "Sliding Banner",
+        "5 Stock Photos",
+        "12 Revisions",
+        "Hover Effects",
+        "Up to 25 Products",
+        "Up to 5 Categories",
+        "Content/Inventory Management System",
+        "Easy Product Search Bar",
+        "Shopping Cart Integration",
+        "Payment Module Integration",
+        "Direct Checkout",
+        "Sign up Checkout",
+        "Shipping calculator Integration",
+        "Wishlist",
+        "Search Engine Submission",
+        "Social Media Pages Integration",
+        "Facebook “Like” Plugin integration",
+        "Sitemap",
+        "Complete W3C Validation",
+        "Dedicated Team of Designers and Developers",
+        "Complete Deployment",
+        "– Value Added Services",
+        "Complete Source Files",
+        "Dedicated Project Manager",
+        "100% Ownership Rights",
+        "100% Satisfaction Guarantee",
+        "Money Back Guarantee *",
+        "Unlimited Revisions",
+      ],
+    },
+    {
+      price: "$2399",
+      title: "E-commerce-professional",
+      features: [
+       "E-Commerce Website Design and Development",
+       "Customized Theme Based Design",
+       "7 Banner Designs",
+       "Sliding Banner",
+       "7 Stock Photos",
+       "Unlimited Revisions",
+       "Hover Effects",
+       "Up to 100 Products",
+       "Up to 10 Categories",
+       "Content/Inventory Management System",
+       "Mobile Responsive",
+       "Easy Product Search Bar",
+       "Shopping Cart Integration",
+       "Payment Module Integration",
+       "Direct Checkout",
+       "Sign up Checkout",
+       "Tax calculator Integration",
+       "Shipping calculator Integration",
+       "Wishlist",
+       "Import/Export Order",
+       "Bulk Import/export of Order information",
+       "Search Engine Submission",
+       "SEO Friendly",
+       "Web Analytics Integration",
+       "Monthly Traffic Reporting",
+       "Social Media Pages Integration",
+       "Facebook “Like” Plugin integration",
+       "Sitemap",
+       "Complete W3C Validation",
+       "Dedicated Team of Designers and Developers",
+       "Complete Deployment",
+       "– Value Added Services",
+       "Complete Source Files",
+       "Dedicated Project Manager",
+       "100% Ownership Rights",
+       "100% Satisfaction Guarantee",
+       "Money Back Guarantee *",
+       "Unlimited Revisions",
+       " *NO MONTHLY OR ANY HIDDEN FEE*",
+      ],
+    },
+    {
+      price: "$3399",
+      title: "E-commerce-Identity",
+      features: [
+      "E-Commerce Website Design and Development",
+      "Customized Tailor-Made Design",
+      "Professional, Modern, Unique Design",
+      "10 Banner Designs",
+      "Sliding Banner",
+      "10 Stock Photos",
+      "Unlimited Revisions",
+      "Special Hover Effects",
+      "Up to 500 Products",
+      "Up to 25 Categories",
+      "Product Reviews &amp; Ratings",
+      "Content/Inventory Management System",
+      "Mobile Responsive",
+      "User Signup Area",
+      "User Sign-in Area",
+      "User Dashboard Area",
+      "Auto Email for Profile Validation &amp; Notification(s)",
+      "Easy Product Search Bar",
+      "Shopping Cart Integration",
+      "Payment Module Integration",
+      "Direct Checkout",
+      "Sign up Checkout",
+      "Tax calculator Integration",
+      "Shipping calculator Integration",
+      "Wishlist",
+      "Import/Export Order",
+      "Bulk Import/export of Order information",
+      "Search Engine Submission",
+      "SEO Friendly",
+      "Web Analytics Integration",
+      "Monthly Traffic Reporting",
+      "Social Media Pages Integration",
+      "Facebook “Like” Plugin integration",
+      "Blog page (If Required)",
+      "Sitemap",
+      "Complete W3C Validation",
+      "Dedicated Team of Designers and Developers",
+      "Complete Deployment",
+      "– Value Added Services",
+      "Complete Source Files",
+      "Dedicated Project Manager",
+      "100% Ownership Rights",
+      "100% Satisfaction Guarantee",
+      "Money Back Guarantee *",
+      "Unlimited Revisions",
+      " *NO MONTHLY OR ANY HIDDEN FEE*",
+      
+      ],
+    },
+    {
+      price: "$4999",
+      title: "E-commerce-Elite",
+      features: [
+        "E-Commerce Website Design and Development",
+        "Customized Tailor-Made Design",
+        "Professional, Modern, Interactive, Dynamic, Unique Design",
+        "User-friendly Navigation",
+        "20 Banner Designs",
+        "Sliding Banner",
+        "20 Stock Photos",
+        "Unlimited Revisions",
+        "Special Hover Effects",
+        "Content/Inventory Management System",
+        "Mobile Responsive",
+        "Unlimited Products",
+        "Unlimited Categories",
+        "Product Reviews &amp; Ratings",
+        "Product Summary Reports (Out of stock / Most Sold / Lowest sale etc) By Date",
+        "Multiple Filtrations Option",
+        "Multiple Shorting Options (Newest / Price / Alphabetical / Rating)",
+        "Product View with Multiple Views",
+        "Product Rating",
+        "Product Detail with Similar Product Range",
+        "Coupon Code Generation (by category and product)",
+        "Product Comparison",
+        "User Signup Area",
+        "User Sign-in Area",
+        "User Dashboard Area",
+        "Auto Email for Profile Validation &amp; Notification(s)",
+        "Last Purchase Order Details (download invoice)",
+        "Customer Login / Registration via Social Login Facebook and Google+",
+        "Customer profile management (From Backend and Frontend)",
+        "Discounted Products Showcase",
+        "New Arrival Products Showcase",
+        "Discount Coupons",
+        "Easy Product Search Bar",
+        "Shopping Cart Integration",
+        "Payment Module Integration",
+        "Multiple Currency Integration",
+        "Direct Checkout",
+        "Sign up Checkout",
+        "Tax calculator Integration",
+        "Shipping calculator Integration",
+        "Wishlist",
+        "Import/Export Order",
+        "Bulk Import/export of Order information",
+        "Bulk Product Upload From Excel Sheet",
+        "Export order into excel sheet",
+        "Live Chat Integration",
+        "Search Engine Submission",
+        "SEO Friendly",
+        "Web Analytics Integration",
+        "Monthly Traffic Reporting",
+        "Social Media Pages Integration",
+        "Facebook Shop Setup",
+        "Facebook “Like” Plugin integration",
+        "Blog page (If Required)",
+        "Sitemap",
+        "Complete W3C Validation",
+        "Dedicated Team of Designers and Developers",
+        "Complete Deployment",
+        "– Value Added Services",
+        "Complete Source Files",
+        "Dedicated Project Manager",
+        "100% Ownership Rights",
+        "100% Satisfaction Guarantee",
+        "Money Back Guarantee *",
+        "Unlimited Revisions",
+        " *NO MONTHLY OR ANY HIDDEN FEE*",
+       
+      ],
+    },
+    {
+      price: "$7398",
+      title: "E-commerce-corporate",
+      features: [
+       "E-Commerce Website Design and Development",
+       "Customized Tailor-Made Design",
+       "Professional, Modern, Interactive, Dynamic, Unique Design",
+       "User-friendly Navigation",
+       "20 Banner Designs",
+       "Sliding Banner",
+       "20 Stock Photos",
+       "Special Hover Effects",
+       "Unlimited Revisions",
+       "Special Hover Effects",
+       "Content/Inventory Management System",
+       "Mobile Responsive",
+       "Unlimited Products",
+       "Unlimited Categories",
+       "Product Reviews &amp; Ratings",
+       "Product Summary Reports (Out of stock / Most Sold / Lowest sale etc) By Date",
+       "Multiple Filtrations Option",
+       "Multiple Shorting Options (Newest / Price / Alphabetical / Rating)",
+       "Product View with Multiple Views",
+       "Product Rating",
+       "Product Detail with Similar Product Range",
+       "Coupon Code Generation (by category and product)",
+       "Product Comparison",
+       "User Signup Area",
+       "User Sign-in Area",
+       "User Dashboard Area",
+       "Auto Email for Profile Validation &amp; Notification(s)",
+       "Last Purchase Order Details (download invoice)",
+       "Customer Login / Registration via Social Login Facebook and Google+",
+       "Customer profile management (From Backend and Frontend)",
+       "Discounted Products Showcase",
+       "New Arrival Products Showcase",
+       "Discount Coupons",
+       "Easy Product Search Bar",
+       "Shopping Cart Integration",
+       "Payment Module Integration",
+       "Multiple Currency Integration",
+       "Direct Checkout",
+       "Sign up Checkout",
+       "Tax calculator Integration",
+       "Shipping calculator Integration",
+       "Wishlist",
+       "Import/Export Order",
+       "Bulk Import/export of Order information",
+       "Bulk Product Upload From Excel Sheet",
+       "Export order into excel sheet",
+       "Live Chat Integration",
+       "Search Engine Submission",
+       "SEO Friendly",
+       "Web Analytics Integration",
+       "Monthly Traffic Reporting",
+       "Social Media Pages Integration",
+       "Facebook Shop Setup",
+       "Facebook “Like” Plugin integration",
+       "Blog page (If Required)",
+       "Sitemap",
+       "Complete W3C Validation",
+       "Dedicated Team of Designers and Developers",
+       "Complete Deployment",
+       "– Value Added Services",
+       "Complete Source Files",
+       "Dedicated Project Manager",
+       "100% Ownership Rights",
+       "100% Satisfaction Guarantee",
+       "Money Back Guarantee *",
+       "Unlimited Revisions",
+       " *NO MONTHLY OR ANY HIDDEN FEE*",
+      ],
+    },
+  ],
+  "Social Marketing": [
+    {
+      price: "$199",
+      title: " Bronze Social",
+      features: [
+            "1 Social Media Platform (Facebook)",
+            "Social media account setup",
+            "Complete Account Management",
+            "8 Custom Designed Social Media Posts per month",
+            "Custom Editorial calendar (Review before publishing)",
+            "Goal focused Facebook Ad campaigns",
+            "1000 Likes on Facebook page ",
+            "End of term report-KPI Comparison &amp; more",
+           
+      ],
+    },
+    {
+      price: "$2500",
+      title: " Silver Social ",
+      features: [
+        "2 Social Media Platforms (Facebook/ Instagram)",
+        "Social media accounts setup",
+        "Complete Accounts Management",
+        "12 Custom Designed Social Media Posts per month",
+        "Custom Editorial calendar (Review before publishing)",
+        "Goal focused Facebook and Instagram Ad campaigns",
+        "Call to action Integration ",
+        "1200 likes on Facebook page",
+        "250 followers on Instagram",
+        "Monthly Analytic Report-KPI Comparison &amp; more",
+        "",
+        "",
+        "",
+      ],
+    },
+    {
+      price: "$3500",
+      title: " Gold Social",
+      features: [
+        "3 Social Media Platforms (Facebook/ Instagram/ Twitter)",
+        "Social media accounts setup",
+        "Complete Accounts Management",
+        "Competitor Analysis – Local and Nationwide",
+        "16 Custom Designed Social Media Posts per month",
+        "Community management – All Community Based Social Networks",
+        "1 GIF post per Month",
+        "Custom Editorial Calendar (Review before publishing)",
+        "Goal focused Facebook and Instagram Ad campaigns",
+        "Engagement Tracking Setup",
+        "Call to action Integration",
+        "3000 Likes on Facebook page",
+        "500 followers on Instagram",
+        "Bi-monthly Analytic Report-KPI Comparison &amp; more",
+        "Dedicated Account Manager",
+        "",
+        "",
+        "",
+      ],
+    },
+    {
+      price: "$5400",
+      title: " Combo Social",
+      features: [
+           "4 Social Media Platforms (Facebook/ Instagram / Twitter/Linkedin)",
+           "Social media accounts setup",
+           "Complete Accounts Management",
+           "Initial Brand Analysis ",
+           "Consumer Persona Analysis",
+           "Competitor Analysis – Local and Nationwide",
+           "18 Custom Designed Social Media Posts per month",
+           "Community management– All Community Based Social Networks",
+           "Brand Listing-20",
+           "2 Gif post per month",
+           "Custom Editorial Calendar (Review before publishing)",
+           "Goal focused Facebook and Instagram Ad campaign",
+           "Engagement Tracking Setup",
+           "Call to action Integration",
+           "Facebook Shop Creation",
+           "4000 Likes on Facebook page",
+           "800 followers on Instagram",
+           "Weekly Analytic Report -KPI Comparison &amp; more",
+           "Dedicated Account manager",
+           "",
+           "",
+      ],
+    },
+  ],
+  "NFT Design": [
+    {
+      price: "$299",
+      title: "NFT LABS LITE",
+      features: [
+           "Base Character Creation",
+           "3 Traits/Accessories",
+           "2 revisions included",
+           "Sourcefile",
+           "Fully refundable until revision call",
+      ],
+    },
+    {
+      price: "$2400",
+      title: "NFT ENTREPRENEUR",
+      features: [
+        "Base Character",
+        "30 Traits/Accessories",
+        "1,000 Variations",
+        "Collection Generation",
+        "Metadata",
+        "Source Files",
+        "2 Revisions included",
+        "2 Revisions included",
+      ],
+    },
+    {
+      price: "$4999",
+      title: "NFT MOON SHOT",
+      features: [
+        "Base Character",
+        "70 Traits/Accessories",
+        "10,000 Variations",
+        "Collection Generation",
+        "Metadata",
+        "Source Files",
+        "3 Revisions included",
+        "Fully refundable until revision call",
+        
+      ],
+    },
+  ],
+  "Marketing Collateral": [
+    {
+      price: "$149",
+      title: "Startup Collateral",
+      features: [
+        "2 Stationery Design Set",
+        "FREE Fax Template",
+        "Print Ready Formats",
+        "UNLIMITED Revisions",
+        "100% Satisfaction Guarantee",
+        "Money Back Guarantee *",
+        "Unlimited Revisions",
+        
+      ],
+    },
+    {
+      price: "$299",
+      title: "Collateral Classic",
+      features: [
+        "2 Stationery Design Set",
+        "UNLIMITED Revisions",
+        "Flyer Design",
+        "Brochure Design (Bi-fold/Tri-fold)",
+        "100% Satisfaction Guarantee",
+        "Money Back Guarantee *",
+        "Unlimited Revisions",
+        
+      ],
+    },
+    {
+      price: "$499",
+      title: "Premium Collateral",
+      features: [
+        "2 Stationery Design Set",
+        "Packaging Design",
+        "UNLIMITED Revisions",
+        "T-Shirt Design",
+        "100% Satisfaction Guarantee",
+        "Money Back Guarantee *",
+        "Unlimited Revisions",
+        
+      ],
+    },
+  ],
+  "SEO": [
+    {
+      price: "$300",
+      title: "Basic Plan",
+      features: [
+        " 1 Prior Analysis",
+        "Business Analysis",
+        "Consumer Analysis",
+        "Competitor Analysis",
+        "15 Selected Keywords Targeting",
+        "15 Pages Keyword Targeted",
+        "2 Webpage Optimization",
+        "Meta Tags Creation",
+        "Keyword Optimization",
+        "Image Optimization",
+        "Inclusion of anchors",
+        "3 Tracking Analysis",
+        "Google Analytics Installation",
+        "Creation of Sitemaps",
+        "4 Reporting",
+        "Monthly Reporting ",
+        "Recommendation ",
+        "Email Support",
+        "Phone Support",
+       
+     
+
+      ],
+    },
+    {
+      price: "$599",
+      title: "Premium Plan",
+      features: [
+           " 1 Prior Analysis",
+           "Business Analysis",
+           "Consumer Analysis",
+           "Competitor Analysis",
+           "30 Selected Keywords Targeting",
+           "30 Pages Keyword Targeted",
+           " 2 AnPrioralysis",
+           "Meta Tags Creation",
+           "Keyword Optimization",
+           "Image Optimization",
+           "Inclusion of anchors Tags",
+           "Inclusion of anchors Indexing Modifications",
+           "3 Tracking Analysis",
+           "Google Places Inclusions",
+           "Google Webmaster Installation",
+           "Call To Action Plan",
+           "Creation of Sitemaps",
+           "4 Reporting",
+           "Monthly Reporting ",
+           "Recommendation ",
+           "Email Support",
+           "Phone Support",
+           " 5 Off Page Optimization",
+           "Social Bookmarking",
+           "Slide Share Marketing ",
+           "Forums/FAQ’s",
+           "Link Building",
+           "Directory Submission",
+           "Local Business Listings ",
+           
+      ],
+    },
+    {
+      price: "$899",
+      title: "Premium Plan",
+      features: [
+         " 1 Prior Analysis",
+         "Business Analysis",
+         "Consumer Analysis",
+         "Competitor Analysis",
+         "70 Selected Keywords Targeting",
+         " 2 Webpage Optimization",
+         "Meta Tags Creation",
+         "Keyword Optimization",
+         "Image Optimization",
+         "Inclusion of anchors Tags",
+         "3Tracking Analysis",
+         "Google Places Inclusions",
+         "Google Analytics Installation",
+         "Google Webmaster Installation",
+         "Call To Action Plan",
+         "Creation of Sitemaps",
+         "Phone Support",
+         "4 Off Page Optimization",
+         "Social Bookmarking",
+         "Slide Share Marketing ",
+         "Forums/FAQ’s",
+         "Link Building",
+         "Directory Submission",
+         "Local Business Listings ",
+         "Blog Content Creation ",
+         "Local SEO",
+       
+           
+      ],
+    },
+  ],
+};
+
+const FeatureRow: React.FC<{ text: string }> = ({ text }) => (
+  <li className="flex items-center gap-3">
+    ✅ <span>{text}</span>
+  </li>
+);
+
+const PricingSection: React.FC = () => {
+  const [activeCategory, setActiveCategory] = useState(categories[0]);
+
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    arrows: true,
+    responsive: [
+      { breakpoint: 1024, settings: { slidesToShow: 2 } },
+      { breakpoint: 640, settings: { slidesToShow: 1 } },
+    ],
+  };
+
+  const packages = packagesData[activeCategory] || [];
+
+  return (
+    <>
+ 
+    <section className="py-16 bg-gradient-to-b from-white to-blue-50">
+      {/* Heading */}
+      <div className="text-center max-w-2xl mx-auto mb-12">
+        <h2 className="text-3xl font-bold text-gray-900">
+          Most Affordable Packages
+        </h2>
+        <p className="text-gray-600 mt-2">
+          We are well aware of the competition. That is the reason why we have a fair pricing model.
+We ensure quality over quantity on each order.
+        </p>
+
+        {/* Categories */}
+        <div className="flex flex-wrap justify-center gap-4 mt-6">
+          {categories.map((cat, idx) => (
+            <button
+              key={idx}
+              onClick={() => setActiveCategory(cat)}
+              className={`px-4 py-1 rounded-full text-sm font-medium border transition ${cat === activeCategory
+                  ? "bg-blue-500 text-white border-blue-500"
+                  : "text-gray-700 border-gray-300 hover:bg-blue-100"}`}
+            >
+              {cat}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {/* Packages Slider */}
+      <div className="max-w-6xl mx-auto m-4 px-4">
+        <Slider {...settings}>
+          {packages.map((pkg, idx) => (
+            <motion.div 
+            key={idx}
+              whileHover={{ y: -8 }}
+              className="bg-gradient-to-b from-blue-400 to-blue-600 text-white rounded-2xl shadow-lg p-6 flex flex-col  gap-1 "
+            >
+              <h3 className="text-4xl font-bold">{pkg.price}</h3>
+              <p className="text-lg mt-1">{pkg.title}</p>
+
+              {/* Scrollable Features */}
+              <ul
+                className="mt-4 mb-4 space-y-2 flex-1 overflow-y-auto pr-2 custom-scroll"
+                style={{ maxHeight: "190px" }}
+              >
+                {pkg.features.map((f: string, i: number) => (
+                  <FeatureRow key={i} text={f} />
+                ))}
+              </ul>
+
+              <button className="mt-6 bg-white text-blue-600 font-semibold py-2 px-2 m-2 rounded-md hover:bg-gray-100 transition">
+                ORDER NOW
+              </button>
+              <a
+                href="#"
+                className="mt-2 inline-flex items-center gap-2 text-sm underline"
+              >
+                <span>Click here to</span> Live Chat
+                <ArrowRight size={15} />
+              </a>
+            </motion.div>
+          ))}
+        </Slider>
+      </div>
+
+      {/* Custom Scrollbar */}
+      <style jsx global>{`
+        .custom-scroll::-webkit-scrollbar {
+          width: 6px;
+        }
+        .custom-scroll::-webkit-scrollbar-thumb {
+          background: #9ca3af;
+          border-radius: 9999px;
+        }
+        .custom-scroll::-webkit-scrollbar-track {
+          background: transparent;
+        }
+      `}</style>
+    </section><div>
+        {/* <Awards/>/ */}
+        {/* <ContactForm/>/ */}
+        {/* <AnimatedContact/> */}
+        {/* <Footer/> */}
+     
+      </div></>
+  );
+};
+
+export default PricingSection;

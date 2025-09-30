@@ -19,7 +19,7 @@ const AnimatedSection: React.FC = () => {
       style={{
         display: 'flex',
         flexDirection: 'row',
-        minHeight: '120vh',
+        minHeight: '80vh',
         background: '#fff',
         flexWrap: 'wrap',
       }}

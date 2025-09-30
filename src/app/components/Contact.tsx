@@ -22,7 +22,7 @@ const AnimatedContact: React.FC = () => {
             with us means a seat at the table where your voice will be heard.
           </p>
 
-          <button className="px-5 sm:px-6 py-2 sm:py-3 bg-white text-white-800 rounded-full font-semibold shadow-md hover:opacity-88 transition">
+          <button className="px-5 sm:px-6 py-2 sm:py-3 bg-white text-black rounded-full font-semibold shadow-md hover:opacity-88 transition">
             Contact Us
           </button>
 

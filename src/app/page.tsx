@@ -8,11 +8,12 @@ import Digital from "./components/Digital";
 import Footer from "./components/Footer";
 import Form from "./components/Form";
 import Header from "./components/Header";
-import Slider from "./components/Herosection";
+// import Slider from "./components/Herosection";/
 import Herosection from "./components/Herosection";
 import StatsSection from "./components/Hitting";
 // import Hitting from "./components/Hitting";/
 import Package from "./components/Package";
+import PackagesData from "./components/PackagesData";
 import Portfolio from "./components/Portfolio";
 import Process from "./components/Process";
 import Testimonial from "./components/Testimonial";
@@ -34,6 +35,7 @@ export default function () {
     <Text/>
      {/* <Slider/>  */}
     <Coursol/>
+    <PackagesData/>
     <Package/>
     {/* <Hitting/> */}
     <Process/>
@@ -43,8 +45,8 @@ export default function () {
   <Testimonial/>
   < Form/>
   <Contact/>
+  {/* <StatsSection/>/ */}
   <Footer/>
-  <StatsSection/>
  
   
   

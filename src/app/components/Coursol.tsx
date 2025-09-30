@@ -4,6 +4,7 @@ import React from "react";
 import Slider, { Settings } from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+// import PricingSection from "./PackagesData";/
 
 const slides = [
   {
@@ -81,7 +82,11 @@ const AutoSlider: React.FC = () => {
           ))}
         </Slider>
       </div>
+      <div>
+        {/* <PricingSection/>/ */}
+      </div>
     </div>
+    
   );
 };
 
