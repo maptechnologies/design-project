@@ -25,7 +25,7 @@ export default function Header() {
 
         {/* Services Dropdown */}
         <div
-          className="relative group"
+          className="relative"
           onMouseEnter={() => setDropdownOpen(true)}
           onMouseLeave={() => setDropdownOpen(false)}
         >
@@ -34,11 +34,63 @@ export default function Header() {
           </span>
 
           {dropdownOpen && (
-            <div className="absolute top-full left-0 bg-[#444] rounded-lg shadow-lg mt-2 min-w-[180px] overflow-hidden">
-              <Link href="/services/web-development" className="block px-5 py-2 hover:bg-[#2f92ff] transition">Web Development</Link>
-              <Link href="/services/app-development" className="block px-5 py-2 hover:bg-[#2f92ff] transition">App Development</Link>
-              <Link href="/services/seo" className="block px-5 py-2 hover:bg-[#2f92ff] transition">SEO</Link>
-              <Link href="/services/design" className="block px-5 py-2 hover:bg-[#2f92ff] transition">Design</Link>
+            <div className="absolute top-full left-0 mt-3 w-[750px] bg-white text-black p-6 rounded-lg shadow-xl grid grid-cols-3 gap-4 z-50">
+              {[
+                {
+                  title: "LOGO DESIGN",
+                  desc: "Get A Logo That Defines Who You Are",
+                  link: "/services/logo-design",
+                },
+                {
+                  title: "BRANDING",
+                  desc: "Effective And Strategized Branding",
+                  link: "/services/branding",
+                },
+                {
+                  title: "WEB DESIGN & DEVELOPMENT",
+                  desc: "Get A Website That Increases Conversion",
+                  link: "/services/web-design",
+                },
+                {
+                  title: "E-COMMERCE",
+                  desc: "Sell Your Products In The Best Way Possible",
+                  link: "/services/ecommerce",
+                },
+                {
+                  title: "VIDEO ANIMATION",
+                  desc: "Animation That Delivers Your Message",
+                  link: "/services/video-animation",
+                },
+                {
+                  title: "SOCIAL MEDIA MARKETING",
+                  desc: "Get Your Brand Noticed Around Various",
+                  link: "/services/social-media",
+                },
+                {
+                  title: "CONTENT WRITING",
+                  desc: "Professional Content That Boosts Your ROI",
+                  link: "/services/content-writing",
+                },
+                {
+                  title: "SEO",
+                  desc: "Get The Top Spot On Search Engine Ranking",
+                  link: "/services/seo",
+                },
+                {
+                  title: "NFT DESIGN",
+                  desc: "Get Your NFTs Designed From Highly Experienced Designers And Developers",
+                  link: "/services/nft-design",
+                },
+              ].map((item, index) => (
+                <Link
+                  key={index}
+                  href={item.link}
+                  className="border border-[#ccc] rounded-md p-4 hover:bg-[#2f92ff] hover:text-white transition duration-300 shadow-md"
+                >
+                  <h4 className="font-bold text-sm mb-1">{item.title}</h4>
+                  <p className="text-xs">{item.desc}</p>
+                </Link>
+              ))}
             </div>
           )}
         </div>
@@ -78,15 +130,20 @@ export default function Header() {
           <Link href="/" onClick={() => setMobileMenu(false)}>HOME</Link>
           <Link href="/about" onClick={() => setMobileMenu(false)}>ABOUT US</Link>
           <Link href="/portfolio" onClick={() => setMobileMenu(false)}>PORTFOLIO</Link>
-          
+
           {/* Services mobile dropdown */}
           <details className="w-full">
             <summary className="cursor-pointer">SERVICES</summary>
             <div className="flex flex-col pl-4 mt-2">
-              <Link href="/services/web-development" onClick={() => setMobileMenu(false)}>Web Development</Link>
-              <Link href="/services/app-development" onClick={() => setMobileMenu(false)}>App Development</Link>
+              <Link href="/services/logo-design" onClick={() => setMobileMenu(false)}>Logo Design</Link>
+              <Link href="/services/branding" onClick={() => setMobileMenu(false)}>Branding</Link>
+              <Link href="/services/web-design" onClick={() => setMobileMenu(false)}>Web Design & Dev</Link>
+              <Link href="/services/ecommerce" onClick={() => setMobileMenu(false)}>E-Commerce</Link>
+              <Link href="/services/video-animation" onClick={() => setMobileMenu(false)}>Video Animation</Link>
+              <Link href="/services/social-media" onClick={() => setMobileMenu(false)}>Social Media Marketing</Link>
+              <Link href="/services/content-writing" onClick={() => setMobileMenu(false)}>Content Writing</Link>
               <Link href="/services/seo" onClick={() => setMobileMenu(false)}>SEO</Link>
-              <Link href="/services/design" onClick={() => setMobileMenu(false)}>Design</Link>
+              <Link href="/services/nft-design" onClick={() => setMobileMenu(false)}>NFT Design</Link>
             </div>
           </details>
 

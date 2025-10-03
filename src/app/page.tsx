@@ -18,6 +18,7 @@ import Portfolio from "./components/Portfolio";
 import Process from "./components/Process";
 import Testimonial from "./components/Testimonial";
 import Text from "./components/Text";
+// import ServicesGrid from "./service/page";/
 
 
 
@@ -47,6 +48,7 @@ export default function () {
   <Contact/>
   {/* <StatsSection/>/ */}
   <Footer/>
+  {/* <ServicesGrid/> */}
  
   
   

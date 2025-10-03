@@ -1,0 +1,66 @@
+import React from 'react';
+
+// Use public folder image or online image URL
+const workImage = '/iamge/how-we-img.webp';
+
+const steps = [
+  {
+    number: '01',
+    title: 'Design Brief',
+    text: 'The process begins with your delivery of what you have in mind for the logo that is going to go ahead and represent your brand for you. This is what we begin the construction of the logo form.',
+  },
+  {
+    number: '02',
+    title: 'Research & Sketch',
+    text: 'Now that we are clear with what ingredients must be included to brew the perfect logo for you. Our designers will make a concept and make a draft to begin the collaborative design process.',
+  },
+  {
+    number: '03',
+    title: 'Revision',
+    text: 'Once we are satisfied with our delivery, we share it with the client. We are however completely open for constructive feedback and revisions.',
+  },
+  {
+    number: '04',
+    title: 'Final Delivery',
+    text: 'After having the files reviewed by the client and after having the errors removed, we deliver the project and all the necessary format files.',
+  },
+];
+
+const HowWeWork = () => {
+  return (
+    <div className="relative min-h-screen bg-gradient-to-br from-sky-50 via-white to-sky-100 flex flex-col items-center justify-center p-6 overflow-hidden">
+      <h2 className="text-4xl font-extrabold text-gray-800 mb-12 text-center">How We Work</h2>
+
+      {/* Center Image */}
+      <div className="relative w-[340px] h-[220px] z-10 mb-16 shadow-2xl rounded-lg overflow-hidden">
+        <img
+          src={workImage}
+          alt="work process"
+          className="w-full h-full object-cover"
+        />
+      </div>
+
+      {/* Floating Cards */}
+      <FloatingCard position="top-[10%] left-[10%]" delay="animate-float-slow" data={steps[0]} />
+      <FloatingCard position="top-[10%] right-[10%]" delay="animate-float-slow-delay" data={steps[1]} />
+      <FloatingCard position="bottom-[10%] left-[10%]" delay="animate-float-slow-delay" data={steps[2]} />
+      <FloatingCard position="bottom-[10%] right-[10%]" delay="animate-float-slow" data={steps[3]} />
+    </div>
+  );
+};
+
+const FloatingCard = ({ position, delay, data }) => {
+  return (
+    <div className={`absolute ${position} ${delay}`}>
+      <div className="w-72 backdrop-blur-md bg-white/70 border border-white/40 rounded-xl shadow-xl p-5 transition-all duration-500 hover:scale-105 hover:bg-sky-100 hover:shadow-2xl">
+        <h3 className="text-xl font-semibold text-sky-600 mb-2">
+          <span className="text-gray-400 font-bold text-2xl mr-2">{data.number}</span>
+          {data.title}
+        </h3>
+        <p className="text-sm text-gray-700 leading-relaxed">{data.text}</p>
+      </div>
+    </div>
+  );
+};
+
+export default HowWeWork;
