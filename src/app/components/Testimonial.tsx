@@ -1,8 +1,9 @@
 "use client";
 
-import { h6 } from "framer-motion/client";
 import React from "react";
 import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const Testimonials: React.FC = () => {
   const testimonials = [
@@ -33,7 +34,7 @@ const Testimonials: React.FC = () => {
     {
       name: "Peggy Northcott",
       review:
-      "“They were very prompt to reply. They listened to what I needed and had reasonably priced packages to choose from. They had a quick turn around time and we’re professional to deal with. The line connection they used was very broken and caused multiple dropped calls which remote communication through email than I would have preferred.”.",
+        "“They were very prompt to reply. They listened to what I needed and had reasonably priced packages to choose from. They had a quick turn around time and we’re professional to deal with. The line connection they used was very broken and caused multiple dropped calls which remote communication through email than I would have preferred.”.",
       rating: 4,
     },
     {
@@ -76,7 +77,7 @@ const Testimonials: React.FC = () => {
   return (
     <section
       className="relative w-full py-20 bg-cover bg-center text-white"
-      style={{ backgroundImage: "url('/images/testimonial-bg.jpg')" }} // ✅ apni image ka path do
+      style={{ backgroundImage: "url('/images/testimonial-bg.jpg')" }}
     >
       <div className="max-w-5xl mx-auto px-6 text-center">
         {/* Heading */}
@@ -104,7 +105,7 @@ const Testimonials: React.FC = () => {
 
                 {/* Review */}
                 <p className="text-gray-600 text-center leading-relaxed italic">
-                  "{t.review}"
+                  {t.review}
                 </p>
               </div>
             </div>

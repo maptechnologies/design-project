@@ -5,12 +5,12 @@ import { Phone } from "lucide-react";
 
 const AnimatedContact: React.FC = () => {
   return (
-    <section className="relative py-12 md:py-16 bg-gradient-to-r from-fuchsia-500 via-purple-600 to-blue-500 animate-gradient-x">
+    <section className="relative py-12 md:py-16 bg-gradient-to-r from-gray-500 v-600 to-blue-500 animate-gradient-x">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-10 text-white">
         {/* Left Side */}
         <div className="text-center md:text-left space-y-4">
           <p className="uppercase text-xs sm:text-sm opacity-80">Contact Us</p>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold bg-gradient-to-r from-yellow-300 via-pink-500 to-purple-600 bg-clip-text text-transparent leading-snug">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold bg-gradient-to-r from-yellow-300 via-pink-500 to-purple-600 bg-clip-text  text-white text-transparent leading-snug">
             Let’s write your <br /> story, together.
           </h2>
         </div>

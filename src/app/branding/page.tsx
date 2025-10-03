@@ -1,6 +1,19 @@
 'use client'
 import { useEffect } from "react";
 import { motion } from "framer-motion";
+import Page1 from "../components/Brand";
+import Brand from "../components/Brand";
+import LOgoslider2 from "../components/LOgoslider2";
+import StatsSection from "../components/Hitting";
+import Package2 from "../components/Package2";
+import Footer2 from "../components/Footer2";
+import CTASection from "../components/Footer2";
+import Port2 from "../components/Port2";
+import WorkProcess from "../components/Process";
+import ContactForm from "../components/Form";
+import Testimonials from "../components/Testimonial";
+import AnimatedContact from "../components/Contact";
+import Footer from "../components/Footer";
 
 export default function HeroSection() {
   useEffect(() => {
@@ -8,18 +21,18 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <div className="relative bg-black via-yellow-100 to-green-300 py-20 px-6 md:px-20 flex flex-col lg:flex-row items-center justify-between overflow-hidden">
+    <><><div className="bg-gradient-to-r from-blue-200 via--50 to-gray-500 text-black py-20 px-6 md:px-20 flex flex-col lg:flex-row items-center justify-between overflow-hidden">
 
       {/* Left Content */}
       <div className="max-w-xl z-10 text-center lg:text-left">
         <p className="uppercase text-sm font-semibold tracking-wide text-white-700 mb-2">
-         GARNER THE ATTENTION AND CUSTOMERS
+          GARNER THE ATTENTION AND CUSTOMERS
         </p>
-        <h1 className="text-4xl lg:text-5xl font-extrabold text-white-900 leading-tight">
-          That You Want With Our Branding Solutions<br /> 
+        <h1 className="text-4xl lg:text-5xl font-extrabold text-black leading-tight">
+          That You Want With Our Branding Solutions<br />
         </h1>
-        <p className="text-white mt-4 text-lg leading-relaxed">
-         We deliver high quality branding services. Our services are well designed and we fulfill creative marketing needs of our customers that is the powerful way engaging more clients.
+        <p className="text-black mt-4 text-lg  leading-relaxed">
+          We deliver high quality branding services. Our services are well designed and we fulfill creative marketing needs of our customers that is the powerful way engaging more clients.
         </p>
 
         {/* Form */}
@@ -27,18 +40,15 @@ export default function HeroSection() {
           <input
             type="text"
             placeholder="Name"
-            className="px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-green-400 w-full md:w-auto"
-          />
+            className="px-4 py-3 rounded-lg border border-black-300 focus:ring-2 focus:ring-green-400 w-full md:w-auto" />
           <input
             type="text"
             placeholder="Phone Number"
-            className="px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-green-400 w-full md:w-auto"
-          />
+            className="px-4 py-3 rounded-lg border border-black-300 focus:ring-2 focus:ring-green-400 w-full md:w-auto" />
           <input
             type="email"
             placeholder="Email Address"
-            className="px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-green-400 w-full md:w-auto"
-          />
+            className="px-4 py-3 rounded-lg border black-300 focus:ring-2 focus:ring-green-400 w-full md:w-auto" />
         </div>
 
         {/* Buttons */}
@@ -62,13 +72,27 @@ export default function HeroSection() {
           <img
             src="/iamge/branding-mockup.webp" // ✅ Make sure this image exists
             alt="Animated Phone"
-            className="w-40 h-auto object-contain drop-shadow-xl"
-          />
+            className="w-40 h-auto object-contain drop-shadow-xl" />
         </motion.div>
 
         {/* Circle Border */}
-        <div className="absolute inset-0 border-4 border-dashed border-white-400 rounded-full animate-pulse" />
+        <div className="absolute inset-0 border-4 border-dashed border-white rounded-full animate-pulse" />
       </div>
     </div>
+      <div>
+      </div></>
+      <Brand />
+      <LOgoslider2/>
+      <StatsSection/>
+      <Package2/>
+      <Port2/>
+      <WorkProcess/>
+      {/* <Footer2/> */}
+      <CTASection/>
+      <Testimonials/>
+      <ContactForm/>
+      <AnimatedContact/>
+      <Footer/>
+      </>
   );
 }
