@@ -270,7 +270,7 @@ const PricingCombo: React.FC = () => {
         <div className="relative z-10 text-center bg-white/10 backdrop-blur-md rounded-xl shadow-lg px-6 py-6 max-w-3xl w-full">
           {/* Heading */}
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white leading-tight">
-            <span className="bg-gradient-to-r from-blue-400 via-pink-500 to-purple-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-blue-600 via-white to-white bg-clip-text text-transparent">
              MOST AFFORDABLE
 PACKAGES FOR ALL
 OUR CUSTOMERS
