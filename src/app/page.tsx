@@ -29,34 +29,34 @@ import Text from "./components/Text";
 
 export default function () {
   return (
- <div>
+    <div>
 
-    <Header/>
-    <Herosection/>
-    <Text/>
-     {/* <Slider/>  */}
-    <Coursol/>
-    <PackagesData/>
-    <Package/>
-    {/* <Hitting/> */}
-    <Process/>
-    < Awards/>
-    <Portfolio/>
-    <Digital/>
-  <Testimonial/>
-  < Form/>
-  <Contact/>
-  {/* <StatsSection/>/ */}
-  <Footer/>
-  {/* <ServicesGrid/> */}
-  
- 
-  
-  
-  
+      {/* <Header/> */}
+      <Herosection />
+      <Text />
+      {/* <Slider/>  */}
+      <Coursol />
+      <PackagesData />
+      <Package />
+      {/* <Hitting/> */}
+      <Process />
+      < Awards />
+      <Portfolio />
+      <Digital />
+      <Testimonial />
+      < Form />
+      <Contact />
+      {/* <StatsSection/>/ */}
+      <Footer />
+      {/* <ServicesGrid/> */}
 
-  
- </div>
+
+
+
+
+
+
+    </div>
 
   );
 

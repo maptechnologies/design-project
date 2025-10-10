@@ -1,12 +1,18 @@
 import React, { useState } from "react";
 
 const works = [
-  { id: 1, img: "/iamge/branding-gallery-img-1.webp", title: "Slashing Pumpkins" },
-  { id: 2, img: "/iamge/branding-gallery-img-2.webp", title: "Robot Design" },
-  { id: 3, img: "/iamge/branding-gallery-img-3.webp", title: "Seoul Bowl" },
-  { id: 4, img: "/iamge/branding-gallery-img-4.webp", title: "Ape Design" },
-  { id: 5, img: "/iamge/branding-gallery-img-5.webp", title: "Space Logo" },
-  { id: 6, img: "/iamge/branding-gallery-img-6.webp", title: "Pixel Art" },
+  { id: 1, img: "/iamge/8 (2).webp", title: "Slashing Pumpkins" },
+  { id: 2, img: "/iamge/7.webp", title: "Robot Design" },
+  { id: 3, img: "/iamge/8.webp", title: "Seoul Bowl" },
+  { id: 4, img: "/iamge/9 (2).webp", title: "Ape Design" },
+  { id: 5, img: "/iamge/9.webp", title: "Space Logo" },
+  { id: 6, img: "/iamge/10.webp", title: "Pixel Art" },
+  { id: 6, img: "/iamge/11.webp", title: "Pixel Art" },
+  { id: 6, img: "/iamge/1.webp", title: "Pixel Art" },
+  { id: 6, img: "/iamge/2.webp", title: "Pixel Art" },
+  { id: 6, img: "/iamge/9.webp", title: "Pixel Art" },
+  { id: 6, img: "/iamge/5.webp", title: "Pixel Art" },
+  { id: 6, img: "/iamge/6.webp", title: "Pixel Art" },
  
 ];
 
