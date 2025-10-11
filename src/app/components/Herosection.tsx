@@ -22,20 +22,20 @@ const Slider: React.FC = () => {
   // ✅ Auto-slide every 3 seconds
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % slides.length);
-    }, 3000);
+      setCurrent((prev) => (prev + 2) % slides.length);
+    }, 4000);
     return () => clearInterval(interval);
   }, []);
 
   // ✅ Text animation every 2.5 sec
   useEffect(() => {
     const interval = setInterval(() => {
-      setTextIndex((prev) => (prev + 1) % texts.length);
+      setTextIndex((prev) => (prev + 2) % texts.length);
     }, 2500);
     return () => clearInterval(interval);
   }, []);
 
-  const nextSlide = () => setCurrent((prev) => (prev + 1) % slides.length);
+  const nextSlide = () => setCurrent((prev) => (prev + 2) % slides.length);
   const prevSlide = () => setCurrent((prev) => (prev - 1 + slides.length) % slides.length);
 
   // ---------- Styles ----------

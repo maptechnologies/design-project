@@ -76,12 +76,12 @@ const AnimatedSection: React.FC = () => {
             marginTop:'2px',
           }}
         >
-          Conceptualization, Transformation And <br />
-          <span style={{ color: '#3092ff' }}>Creativity</span>
+          Conceptualization, Transformation And <br /> Creativity <br />
+          <span style={{ color: '#3092ff' }}></span>
         </h1>
         <p
           style={{
-            fontSize: '20px',
+            fontSize: '21px',
             maxWidth: '700px',
             color: '#555',
             lineHeight: 1.6,

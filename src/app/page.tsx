@@ -11,6 +11,7 @@ import Header from "./components/Header";
 // import Slider from "./components/Herosection";/
 import Herosection from "./components/Herosection";
 import StatsSection from "./components/Hitting";
+import Mostpackage from "./components/Mostpackage";
 // import Hitting from "./components/Hitting";/
 import Package from "./components/Package";
 import PackagesData from "./components/PackagesData";
@@ -36,7 +37,8 @@ export default function () {
       <Text />
       {/* <Slider/>  */}
       <Coursol />
-      <PackagesData />
+      <Mostpackage/>
+      {/* <PackagesData /> */}
       <Package />
       {/* <Hitting/> */}
       <Process />

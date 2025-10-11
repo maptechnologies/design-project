@@ -77,7 +77,7 @@ const AnimatedSection: React.FC = () => {
           }}
         >
           Build Your Brand 
-          <span style={{ color: '#3092ff' }}> With Us</span>
+          <span style={{ color: '#444245' }}> With Us</span>
         </h1>
         <p
           style={{

@@ -1289,7 +1289,7 @@ const packagesData: Record<string, any[]> = {
 
 const FeatureRow: React.FC<{ text: string }> = ({ text }) => (
   <li className="flex items-center gap-3">
-    ✅ <span>{text}</span>
+     <span>{text}</span>
   </li>
 );
 
