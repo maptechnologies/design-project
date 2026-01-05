@@ -5,8 +5,8 @@ import { useState } from "react";
 
 // Components
 import Brand2 from "../components/Service-text2";
-import LOgoslider2 from "../components/Service-brand";
-// import L0goslider3 from "../components/L0goslider3";
+import Logoslider2 from "../components/Service-brand";
+// import Logoslider3 from "../components/L0goslider3";
 import Brand3 from "../components/Service-text3";
 import StatsSection from "../components/Home-2package";
 import Packeges3 from "../components/Service-packeges3";
