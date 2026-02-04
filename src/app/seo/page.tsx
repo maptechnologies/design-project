@@ -4,41 +4,16 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 
 // Components
-import Brand2 from "../components/Service-text2";
-import LOgoslider2 from "../components/Service-brand";
-
-import Brand3 from "../components/Service-text3";
-import StatsSection from "../components/Home-2package";
-import Packeges3 from "../components/Service-packeges3";
 import CTASection from "../components/Footer2";
-import Port3 from "../components/Service-bar3";
 import Testimonials from "../components/Home-testimonial";
 import ContactForm from "../components/Home-form";
 import AnimatedContact from "../components/Home-contact";
 import Footer from "../components/Home-footer";
-import Video from "../components/Home-video";
-import Brand4 from "../components/Service-text4";
-import LOgoslider4 from "../components/Service-vedeo-animation";
-import Packeages4 from "../components/Service-packeages4";
-import Crad3 from "../components/Service-animation-process";
 import MajorFeatures from "../components/Service-animation-card";
-import Brand5 from "../components/Service-text5";
-import LOgoslider5 from "../components/Service-social-media";
-import Packages5 from "../components/Service-packages5";
-import Port4 from "../components/Service-bar4";
-// import Major1 from "./Major1";
-import Card4 from "../components/Service-card";
-import Brand6 from "../components/Service-text6";
-import Major2 from "../components/Service-contant-card";
-import Packages6 from "../components/Service-packages6";
-import LOgoslider6 from "../components/Service-contant";
-import Card5 from "../components/Service-contant-writing";
-import Brand7 from "../components/service-text7";
-
-import Major3 from "../combopackage/Major3";
-import Packages7 from "../components/Service-packages7";
 import Card6 from "../components/Service-nft-design";
 import Seo from "../components/Seo-timeline";
+import AnimatedSection from "../components/service-text7";
+import PackagesTailwind from "../components/Service-packages7";
 
 export default function HeroSection() {
   const [isFormOpen, setIsFormOpen] = useState(false);
@@ -301,16 +276,11 @@ export default function HeroSection() {
       )}
 
       {/* 🔽 Additional Sections */}
-      <Brand7 />
-      <Major3/>
-      <Packages7/>
+      <AnimatedSection />
+      <MajorFeatures/>
+      <PackagesTailwind/>
        <Card6/>
        <Seo/>
-      {/* <StatsSection/> */}
-      {/* <LOgoslider7 /> */}
-      {/* <Port4/> */}
-       {/* <Video/> */}
-       {/* <Major1/>/ */}
       <CTASection/>
       <Testimonials/>
       <ContactForm/>

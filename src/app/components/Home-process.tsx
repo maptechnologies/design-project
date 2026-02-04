@@ -75,8 +75,8 @@ const WorkProcess = () => {
 
             {/* ✅ Hover Overlay with Gray Border */}
             <div
-              className="absolute inset-0 bg-blue-600/0 group-hover:bg-blue-400/80 
-              group-hover:border-[8px] group-hover:border-gray-400 
+              className="absolute inset-0 bg-blue-600/0 group-hover:bg-blue-400/70 
+              group-hover:border-[8px] group-hover:border-gray-600 
               transition-all duration-500 flex flex-col items-center justify-center 
               text-center p-4 sm:p-6"
             >

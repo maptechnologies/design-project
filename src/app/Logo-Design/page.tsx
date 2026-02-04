@@ -2,19 +2,15 @@
 import { useEffect } from "react";
 import { motion } from "framer-motion";
 import AnimatedSection from "../components/Service-text";
-import StatsSection from "../components/HomeHitting";
-import Logotypesslider from "../components/Service-logodesign";
-import Packages1 from "../components/Service-packages1";
+import LogoTypesSlider from "../components/Service-brand";
+import StatsSection from "../components/Home-2package";
 import PackagesTailwind from "../components/Service-packages1";
-// import Card1 from "../components/Portone";
-// import Portone from "../components/Portone";
-import Work from "../components/Servicenft-work";
-import Testimonials from "../components/Home-testimonial";
+import PortfolioGrid from "../components/Service-bar1";
+import WorkProcess from "../components/Servicenft-work";
 import ContactForm from "../components/Home-form";
 import AnimatedContact from "../components/Home-contact";
 import Footer from "../components/Home-footer";
-import PortfolioGrid from "../components/Service-bar1";
-// import Testimonials from "../components/Testimonial";
+
 
 export default function HeroSection() {
   useEffect(() => {
@@ -95,11 +91,11 @@ export default function HeroSection() {
 
       </div><div>
         <AnimatedSection/>
-    <Logotypesslider/>
+    <LogoTypesSlider/>
         <StatsSection/>
         <PackagesTailwind/>
         <PortfolioGrid/>
-        <Work/>
+        <WorkProcess/>
         <ContactForm/>
         <AnimatedContact/>
         <Footer/>

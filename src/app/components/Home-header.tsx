@@ -56,9 +56,9 @@ export default function Header() {
               {dropdownOpen && (
                 <div className="absolute left-1/2 transform -translate-x-1/2 mt-3 w-[750px] bg-white text-black p-6 rounded-lg shadow-xl grid grid-cols-3 gap-4 z-50">
                   {[
-                    { title: "LOGO DESIGN", desc: "Get A Logo That Defines Who You Are", link: "/services/logo-design" },
-                    { title: "BRANDING", desc: "Effective Branding That Works", link: "/services/branding" },
-                    { title: "WEB DESIGN", desc: "Boost Conversions with Design", link: "/services/web-design" },
+                    { title: "Logo-Design", desc: "Get A Logo That Defines Who You Are", link: "//logo-design" },
+                    { title: "Branding", desc: "Effective Branding That Works", link: "/services/branding" },
+                    { title: "Web-Design", desc: "Boost Conversions with Design", link: "/services/web-design" },
                     { title: "E-COMMERCE", desc: "Sell Products Online Easily", link: "/services/ecommerce" },
                     { title: "VIDEO ANIMATION", desc: "Animated Videos That Work", link: "/services/video-animation" },
                     { title: "SOCIAL MEDIA", desc: "Social Media Marketing Done Right", link: "/services/social-media" },
