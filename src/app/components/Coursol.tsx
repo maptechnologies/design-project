@@ -2,8 +2,8 @@
 
 import React, { useState } from "react";
 import Slider, { Settings } from "react-slick";
-//import "slick-carousel/slick/slick.css";
-//import "slick-carousel/slick/slick-theme.css";
+// import "slick-carousel/slick/slick.css";
+// import "slick-carousel/slick/slick-theme.css";
 
 const ServicesSection = () => {
   const [hoverIndex, setHoverIndex] = useState<number | null>(null);
@@ -48,55 +48,89 @@ const ServicesSection = () => {
     arrows: false,
     centerMode: false,
     responsive: [
-      { breakpoint: 1280, settings: { slidesToShow: 2 } },
-      { breakpoint: 768, settings: { slidesToShow: 1 } },
+      {
+        breakpoint: 1400,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
     ],
   };
 
   return (
-    <div className="w-full flex flex-col items-center justify-center py-16 bg-white">
-      <div className="w-full max-w-[95vw] md:max-w-[90vw] lg:max-w-[85vw] mx-auto px-2 sm:px-4">
+    <section className="w-full py-14 md:py-20 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
         <Slider {...settings}>
           {services.map((service, index) => {
             const isHovered = hoverIndex === index;
 
             return (
-              <div
-                key={index}
-                onMouseEnter={() => setHoverIndex(index)}
-                onMouseLeave={() => setHoverIndex(null)}
-                className={`
-                  cursor-pointer transition-all duration-300 
-                  mx-3 sm:mx-4 p-8 sm:p-10 md:p-12 
-                  rounded-lg shadow-md flex flex-col justify-center items-center text-center
-                  min-h-[320px] sm:min-h-[360px] md:min-h-[380px]
-                  ${
-                    isHovered
-                      ? "bg-gradient-to-b from-blue-600 to-cyan-400 text-white shadow-2xl scale-105"
-                      : "bg-white text-gray-700 hover:bg-white shadow"
-                  }
-                `}
-              >
-                <h3
-                  className={`text-[18px] sm:text-[20px] font-bold mb-3 transition-colors duration-300 ${
-                    isHovered ? "text-white" : "text-black"
-                  }`}
+              <div key={index} className="px-3">
+                <div
+                  onMouseEnter={() => setHoverIndex(index)}
+                  onMouseLeave={() => setHoverIndex(null)}
+                  className={`
+                    w-full
+                    max-w-[360px]
+                    mx-auto
+                    rounded-xl
+                    cursor-pointer
+                    transition-all
+                    duration-300
+                    p-6
+                    sm:p-8
+                    md:p-10
+                    flex
+                    flex-col
+                    justify-center
+                    items-center
+                    text-center
+                    min-h-[300px]
+                    sm:min-h-[340px]
+                    md:min-h-[360px]
+                    ${
+                      isHovered
+                        ? "bg-gradient-to-b from-[#0050D8] to-[#39D5FF] text-white shadow-2xl scale-[1.03]"
+                        : "bg-white text-gray-700 shadow-lg"
+                    }
+                  `}
                 >
-                  {service.title}
-                </h3>
-                <p
-                  className={`text-sm sm:text-base leading-relaxed transition-colors duration-300 ${
-                    isHovered ? "text-white" : "text-gray-600"
-                  }`}
-                >
-                  {service.desc}
-                </p>
+                  <h3
+                    className={`text-xl font-bold mb-4 transition-all duration-300 ${
+                      isHovered ? "text-white" : "text-black"
+                    }`}
+                  >
+                    {service.title}
+                  </h3>
+
+                  <p
+                    className={`text-[15px] leading-7 transition-all duration-300 ${
+                      isHovered ? "text-white" : "text-gray-600"
+                    }`}
+                  >
+                    {service.desc}
+                  </p>
+                </div>
               </div>
             );
           })}
         </Slider>
+
       </div>
-    </div>
+    </section>
   );
 };
 

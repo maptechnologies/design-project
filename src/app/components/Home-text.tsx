@@ -3,16 +3,35 @@
 import React, { useState, useEffect } from 'react';
 
 const AnimatedSection: React.FC = () => {
-  const [index, setIndex] = useState(0);
-  const text = "DESIGN";
-  const letters = text.split("");
+ const [index, setIndex] = useState(0);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIndex((prev) => (prev + 1) % (letters.length + 1));
-    }, 400);
-    return () => clearInterval(interval);
-  }, [letters.length]);
+const text = "DESIGN";
+const letters = text.split("");
+
+useEffect(() => {
+  const interval = setInterval(() => {
+    setIndex((prev) => (prev + 1) % (letters.length + 1));
+  }, 400);
+
+  return () => clearInterval(interval);
+}, [letters.length]);
+
+// 👇 YAHAN ADD KARO
+const creativeText = "CREATIVE.";
+const creativeLetters = creativeText.split("");
+
+const [creativeIndex, setCreativeIndex] = useState(0);
+
+useEffect(() => {
+  const interval = setInterval(() => {
+    setCreativeIndex((prev) => (prev + 1) % (creativeLetters.length + 1));
+  }, 400);
+
+  return () => clearInterval(interval);
+}, [creativeLetters.length]);
+
+// 👇 Iske baad return aayega
+
 
   return (
     <div
@@ -24,6 +43,42 @@ const AnimatedSection: React.FC = () => {
         background: '#fff',
       }}
     >
+      
+{/* ✅ Right Side Animated Vertical Text */}
+<div
+  className="creative-text"
+  style={{
+    position: "absolute",
+    right: "20px",
+    top: "100%",
+    transform: "translateY(-50%) rotate(180deg)",
+    writingMode: "vertical-rl",
+    fontSize: "6vw",
+    fontWeight: "bold",
+    color: "#333",
+    padding: "10px",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    flexShrink: 0,
+    width: "auto",
+    pointerEvents: "none",
+    userSelect: "none",
+  }}
+>
+  {creativeLetters.map((letter, i) => (
+    <span
+      key={i}
+      style={{
+        display: "block",
+        opacity: i < creativeIndex ? 1 : 0,
+        transition: "opacity 0.3s ease",
+      }}
+    >
+      {letter}
+    </span>
+  ))}
+</div>
       {/* ✅ Left Side Animated Vertical Text */}
       <div
         style={{
@@ -40,6 +95,7 @@ const AnimatedSection: React.FC = () => {
           width: 'auto',
         }}
       >
+        
         {letters.map((letter, i) => (
           <span
             key={i}

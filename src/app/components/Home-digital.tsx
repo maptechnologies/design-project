@@ -65,10 +65,10 @@ const Features: React.FC = () => {
         >
           <h2 className="text-2xl sm:text-3xl md:text-4xl text-gray-700 font-semibold leading-snug">
             A{" "}
-            <span className="bg-gradient-to-r from-cyan-500 to-cyan-500 bg-clip-text text-transparent font-bold">
+            <span className="bg-gradient-to-r from-[#0084e0] to-cyan-500 bg-clip-text text-transparent font-bold">
               DIGITAL AGENCY
             </span>{" "}
-            <span className="bg-gradient-to-r from-black to-black bg-clip-text text-transparent font-extrabold">
+            <span className="bg-gradient-to-r from-gray-600 to-gray-600 bg-clip-text text-transparent font-extrabold">
               SPECIALIZED
             </span>{" "}
             IN <br />
