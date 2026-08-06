@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, CSSProperties } from 'react';
 import AOS from 'aos';
-import 'aos/dist/aos.css';
+//import 'aos/dist/aos.css';//
 
 const slides = [
   '/iamge/slider-img-1.webp',
@@ -51,18 +51,23 @@ const Slider: React.FC = () => {
 
   // Styles
   const container: CSSProperties = {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    flexDirection: 'column',
-    height: '100vh',
-    width: '100vw',
-    position: 'relative',
-    overflow: 'hidden',
-    margin: 0,
-    padding: 0,
-    backgroundColor: '#000',
-  };
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  flexDirection: 'column',
+  height: '70vh',
+paddingTop: '120px',
+  width: '100%',
+  position: 'relative',
+  overflow: 'hidden',
+  margin: 0,
+ 
+
+  backgroundImage: "url('/iamge/Untitled-1-01 1 (1).jpg')",
+  backgroundSize: 'cover',
+  backgroundPosition: 'center',
+  backgroundRepeat: 'no-repeat',
+};
 
   const arrowStyle: CSSProperties = {
     fontSize: '40px',

@@ -9,7 +9,7 @@ const ContactForm: React.FC = () => {
       <div className="max-w-6xl mx-auto px-6">
         {/* Heading */}
         <div className="text-center mb-10">
-          <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-cyan-500 via-blue-500 to-white bg-clip-text text-transparent">
+          <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-black via-black to-black bg-clip-text text-transparent">
             Get In Touch With Us
           </h2>
           <p className="text-gray-600 mt-2">
@@ -21,7 +21,7 @@ const ContactForm: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
           {/* Left Info */}
           <div className="space-y-6">
-            <h3 className="text-3xl font-bold bg-gradient-to-r from-cyan-500 via-blue-500 to-white bg-clip-text text-transparent">
+            <h3 className="text-3xl font-bold bg-gradient-to-r from-cyan-500 via-cyan-500 to-cyan-500 bg-clip-text text-transparent">
               Let’s Talk.
             </h3>
 
@@ -29,7 +29,7 @@ const ContactForm: React.FC = () => {
               <Phone className="text-cyan-500 w-6 h-6 mt-1" />
               <div>
                 <p className="text-xs uppercase text-gray-500">Call Us At</p>
-                <p className="text-lg font-bold bg-gradient-to-r from-blue-500 via-blue-500 to-blue-600 bg-clip-text text-transparent">
+                <p className="text-lg font-bold bg-gradient-to-r from-cyan-500 via-cyan-500 to-cyan-500 bg-clip-text text-transparent">
                   (313) 512-9347
                 </p>
               </div>
@@ -44,7 +44,7 @@ const ContactForm: React.FC = () => {
               <MessageCircle className="text-cyan-500 w-6 h-6 mt-1" />
               <div>
                 <p className="text-xs uppercase text-gray-500">Let’s Chat Now</p>
-                <p className="text-lg font-bold bg-gradient-to-r from-cyan-500 via-blue-500 to-blue-600 bg-clip-text text-transparent">
+                <p className="text-lg font-bold bg-gradient-to-r from-cyan-500 via-cyan-500 to-cyan-500 bg-clip-text text-transparent">
                   Live Chat
                 </p>
               </div>
@@ -80,7 +80,7 @@ const ContactForm: React.FC = () => {
 
             <button
               type="submit"
-              className="px-8 py-3 rounded-full border border-cyan-500 text-black font-semibold shadow-sm hover:bg-cyan-50 transition"
+              className="px-8 py-3 rounded-full border border-cyan-500 text-black font-semibold shadow-sm hover:bg-cyan-500 hover:text-amber-50 transition"
             >
               SEND NOW
             </button>

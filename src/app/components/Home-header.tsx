@@ -9,9 +9,9 @@ export default function Header() {
   const [mobileMenu, setMobileMenu] = useState(false);
 
   return (
-    <header className="relative z-50">
+    <header className="absolute top-0 left-0 w-full z-[9999]">
       {/* Header Container */}
-      <div className="bg-[#3c3c3c] text-white rounded-xl mx-4 md:mx-8 mt-4 md:mt-8 px-1 md:px-8 py-4 relative">
+      <div className="relative mx-auto mt-8 w-[96%] max-w-[1800px] rounded-xl bg-[#3c3c3c]/95 backdrop-blur-md px-6 md:px-10 py-4 text-white shadow-2xl">
         
         {/* Top Right Icons */}
         <div className="absolute right-4 top-[-6px] hidden md:flex gap-6 text-sm items-center">
@@ -40,7 +40,7 @@ export default function Header() {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-6 text-sm font-medium">
             <Link href="/" className="hover:text-[#2f92ff] transition">HOME</Link>
-            <Link href="/about" className="hover:text-[#2f92ff] transition">ABOUT US</Link>
+            <Link href="/aboute" className="hover:text-[#2f92ff] transition">ABOUT US</Link>
             <Link href="/portfolio" className="hover:text-[#2f92ff] transition">PORTFOLIO</Link>
 
             {/* SERVICES Dropdown */}

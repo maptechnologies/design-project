@@ -65,10 +65,10 @@ const Features: React.FC = () => {
         >
           <h2 className="text-2xl sm:text-3xl md:text-4xl text-gray-700 font-semibold leading-snug">
             A{" "}
-            <span className="bg-gradient-to-r from-cyan-500 to-blue-600 bg-clip-text text-transparent font-bold">
+            <span className="bg-gradient-to-r from-cyan-500 to-cyan-500 bg-clip-text text-transparent font-bold">
               DIGITAL AGENCY
             </span>{" "}
-            <span className="bg-gradient-to-r from-pink-500 to-red-500 bg-clip-text text-transparent font-extrabold">
+            <span className="bg-gradient-to-r from-black to-black bg-clip-text text-transparent font-extrabold">
               SPECIALIZED
             </span>{" "}
             IN <br />
@@ -92,7 +92,7 @@ const Features: React.FC = () => {
                   p-6 sm:p-8 rounded-xl shadow-md hover:shadow-2xl 
                   transition-transform duration-500 ease-in-out
                   h-full min-h-[250px] flex flex-col justify-center
-                  bg-gradient-to-br from-cyan-500 to-blue-600 text-white
+                  bg-gradient-to-br from-cyan-500 to-cyan-500 text-white
                   hover:scale-105
                 "
               >

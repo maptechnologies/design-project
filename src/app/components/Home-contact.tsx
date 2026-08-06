@@ -5,7 +5,7 @@ import { Phone } from "lucide-react";
 
 const AnimatedContact: React.FC = () => {
   return (
-    <section className="relative py-12 md:py-16 bg-gradient-to-r from-blue-500  to-blue-500 animate-gradient-x">
+    <section className="relative py-12 md:py-16 bg-gradient-to-r from-cyan-500  to-cyan-500 animate-gradient-x">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-10 text-white">
         {/* Left Side */}
         <div className="text-center md:text-left space-y-4">
@@ -17,7 +17,7 @@ const AnimatedContact: React.FC = () => {
 
         {/* Right Side */}
         <div className="flex flex-col justify-center items-center md:items-start space-y-4">
-          <p className="text-xs sm:text-sm md:text-base max-w-md text-center md:text-left">
+          <p className="text-xs md:text-md md:text-base max-w-md text-center md:text-left">
             We do not tell you our own story. We write it together. Partnering
             with us means a seat at the table where your voice will be heard.
           </p>

@@ -47,7 +47,7 @@ const WorkProcess = () => {
         data-aos="fade-up"
         data-aos-delay="100"
       >
-        <h2 className="text-3xl sm:text-4xl font- text-gray-800">
+        <h2 className="text-3xl sm:text-4xl font-semibold font- text-gray-800">
           Our Work Process
         </h2>
         <p className="text-gray-600 mt-3 max-w-2xl mx-auto text-sm sm:text-base">
@@ -75,8 +75,8 @@ const WorkProcess = () => {
 
             {/* ✅ Hover Overlay with Gray Border */}
             <div
-              className="absolute inset-0 bg-blue-600/0 group-hover:bg-blue-400/70 
-              group-hover:border-[8px] group-hover:border-gray-600 
+              className="absolute inset-0 bg-blue-600/0 group-hover:bg-cyan-500/90
+              group-hover:border-[9px] group-hover:border-gray-600 
               transition-all duration-500 flex flex-col items-center justify-center 
               text-center p-4 sm:p-6"
             >
