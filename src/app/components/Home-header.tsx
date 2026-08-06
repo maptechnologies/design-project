@@ -9,23 +9,23 @@ export default function Header() {
   const [mobileMenu, setMobileMenu] = useState(false);
 
   return (
-    <header className="absolute top-0 left-0 w-full z-[9999]">
+    <header className="absolute top-6 left-0 w-full z-[9999]">
       {/* Header Container */}
       <div className="relative mx-auto mt-8 w-[96%] max-w-[1800px] rounded-xl bg-[#3c3c3c]/95 backdrop-blur-md px-6 md:px-10 py-4 text-white shadow-2xl">
         
         {/* Top Right Icons */}
-        <div className="absolute right-4 top-[-6px] hidden md:flex gap-6 text-sm items-center">
+        <div className="absolute right-4 -top-9 hidden md:flex gap-6 text-md items-center">
           <div className="flex items-center gap-2 cursor-pointer group">
             <img src="/iamge/head-email-img.webp" alt="Email" className="w-5 h-5 group-hover:rotate-180 transition duration-300" />
-            <span className="group-hover:text-[#2f92ff] transition">info@bloopsdesign.com</span>
+            <span className="group-hover:text-[black] transition">info@bloopsdesign.com</span>
           </div>
           <div className="flex items-center gap-2 cursor-pointer group">
             <img src="/iamge/head-phone-img.webp" alt="Phone" className="w-5 h-5 group-hover:rotate-180 transition duration-300" />
-            <span className="group-hover:text-[#2f92ff] transition">(313) 512-9347</span>
+            <span className="group-hover:text-[black] transition">(313) 512-9347</span>
           </div>
           <div className="flex items-center gap-2 cursor-pointer group">
             <img src="/iamge/chat-img-1.webp" alt="Chat" className="w-5 h-5 group-hover:rotate-180 transition duration-300" />
-            <span className="group-hover:text-[#2f92ff] transition">Live Chat</span>
+            <span className="group-hover:text-[black] transition">Live Chat</span>
           </div>
         </div>
 
@@ -53,30 +53,105 @@ export default function Header() {
                 SERVICES <span className="text-xs">▼</span>
               </span>
 
-              {dropdownOpen && (
-                <div className="absolute left-1/2 transform -translate-x-1/2 mt-3 w-[750px] bg-white text-black p-6 rounded-lg shadow-xl grid grid-cols-3 gap-4 z-50">
-                  {[
-                    { title: "Logo-Design", desc: "Get A Logo That Defines Who You Are", link: "//logo-design" },
-                    { title: "Branding", desc: "Effective Branding That Works", link: "/services/branding" },
-                    { title: "Web-Design", desc: "Boost Conversions with Design", link: "/services/web-design" },
-                    { title: "E-COMMERCE", desc: "Sell Products Online Easily", link: "/services/ecommerce" },
-                    { title: "VIDEO ANIMATION", desc: "Animated Videos That Work", link: "/services/video-animation" },
-                    { title: "SOCIAL MEDIA", desc: "Social Media Marketing Done Right", link: "/services/social-media" },
-                    { title: "CONTENT WRITING", desc: "Pro Content That Sells", link: "/services/content-writing" },
-                    { title: "SEO", desc: "Top Google Rankings", link: "/services/seo" },
-                    { title: "NFT DESIGN", desc: "Professional NFT Designs", link: "/services/nft-design" },
-                  ].map((item, index) => (
-                    <Link
-                      key={index}
-                      href={item.link}
-                      className="border border-[#ccc] rounded-md p-4 hover:bg-[#2f92ff] hover:text-white transition duration-300 shadow-md"
-                    >
-                      <h4 className="font-bold text-sm mb-1">{item.title}</h4>
-                      <p className="text-xs">{item.desc}</p>
-                    </Link>
-                  ))}
-                </div>
-              )}
+ {dropdownOpen && (
+  <div className="absolute left-1/2 -translate-x-1/2 mt-4 w-[1050px] bg-white rounded-xl shadow-2xl p-6 z-50">
+    <div className="grid grid-cols-4 gap-4">
+
+      {[
+        {
+          title: "LOGO DESIGN",
+          desc: "Get A Logo That Defines Who You Are",
+          icon: "/iamge/publisher1 (24).webp",
+          link: "/services/logo-design",
+        },
+        {
+          title: "BRANDING",
+          desc: "Effective And Strategized Branding",
+          icon: "/iamge/publisher1 (25).webp",
+          link: "/services/branding",
+        },
+        {
+          title: "WEB DESIGN & DEVELOPMENT",
+          desc: "Get A Website That Increases Conversion",
+          icon: "/iamge/publisher1 (26).webp",
+          link: "/services/web-design",
+        },
+        {
+          title: "E-COMMERCE",
+          desc: "Sell Your Products In The Best Way Possible",
+          icon: "/iamge/publisher1 (27).webp",
+          link: "/services/ecommerce",
+        },
+        {
+          title: "VIDEO ANIMATION",
+          desc: "Animation That Delivers Your Message",
+          icon: "/iamge/publisher1 (28).webp",
+          link: "/services/video-animation",
+        },
+        {
+          title: "SOCIAL MEDIA",
+          desc: "Get Your Brand Noticed Around Various",
+          icon: "/iamge/publisher1 (29).webp",
+          link: "/services/social-media",
+        },
+        {
+          title: "CONTENT WRITING",
+          desc: "Professional Content That Boosts Your ROI",
+          icon: "/iamge/publisher1 (30).webp",
+          link: "/services/content-writing",
+        },
+        {
+          title: "SEO",
+          desc: "Get The Top Spot On Search Engine Ranking",
+          icon: "/iamge/publisher1 (31).webp",
+          link: "/services/seo",
+        },
+      ].map((item, index) => (
+        <Link
+          key={index}
+          href={item.link}
+          className="group border border-sky-300 rounded-lg h-[170px] flex flex-col items-center justify-center text-center p-4 transition-all duration-300 hover:bg-gradient-to-b hover:from-[#0084e0] hover:to-[#00d8f2] hover:shadow-xl"
+        >
+          <img
+            src={item.icon}
+            alt={item.title}
+            className="w-10 h-10 mb-3 transition-all duration-300 group-hover:brightness-0 group-hover:invert"
+          />
+
+          <h4 className="font-bold text-[18px] mb-2 text-black">
+            {item.title}
+          </h4>
+
+          <p className="text-sm leading-6 text-black">
+            {item.desc}
+          </p>
+        </Link>
+      ))}
+
+      <div className="col-span-4 flex justify-center">
+        <Link
+          href="/services/nft-design"
+          className="group border border-sky-300 rounded-lg h-[170px] w-[250px] flex flex-col items-center justify-center text-center p-4 transition-all duration-300 hover:bg-gradient-to-b hover:from-[#1696ea] hover:to-[#20d6f5] hover:shadow-xl"
+        >
+          <img
+            src="/iamge/publisher1 (31).webp"
+            alt="NFT DESIGN"
+            className="w-10 h-10 mb-3 transition-all duration-300 group-hover:brightness-0 group-hover:invert"
+          />
+
+          <h4 className="font-bold text-[18px] mb-2 text-black">
+            NFT DESIGN
+          </h4>
+
+          <p className="text-sm leading-6 text-black">
+            Get Your NFTs Designed From Highly Experienced Designers And Developers
+          </p>
+        </Link>
+      </div>
+
+    </div>
+  </div>
+)}
             </div>
 
             <Link href="/pricing" className="hover:text-[#2f92ff] transition">PRICING</Link>

@@ -175,7 +175,7 @@ const Portfolio: React.FC = () => {
       </div>
 
       {/* ✅ Logo Slider */}
-      <div className="w-full mt-12 bg-gradient-to-r from-cyan-500 via-purple-600 to-blue-600 py-6 sm:py-8">
+      <div className="w-full mt-12 bg-gradient-to-r from-[#0084e0] via- to-[#00d8f2] py-6 sm:py-8">
         <div className="max-w-7xl mx-auto px-3 sm:px-6">
           <Slider {...sliderSettings}>
             {sliderLogos.map((logo, i) => (
