@@ -16,6 +16,7 @@ import Testimonial from "./components/Home-testimonial";
 import Text from "./components/Home-text";
 import Herosection from "./components/portfolio/Portfolio-herosection";
 import HeroSection from "./components/Home-herosection";
+//import FloatingButton from "./components/fix-component";
 // import ServicesGrid from "./service/page";/
 
 
@@ -30,6 +31,7 @@ export default function () {
     <div>
 
    <HeroSection/>
+   
       <Text />
       <Coursol />
       <Mostpackage/>

@@ -1294,7 +1294,7 @@ const PricingSection = () => {
   };
 
   return (
-    <section className="bg-[#f7f9fc] py-19 sm:py-16 md:py-20 flex flex-col items-center px-4 sm:px-6 lg:px-10 xl:px-20">
+    <section className="bg-[#f7f9fc] py-14 sm:py-16 md:py-20 flex flex-col items-center px-4 sm:px-6 lg:px-10 xl:px-20">
       {/* Heading */}
       <h2 className="text-center text-2xl sm:text-3xl lg:text-[42px] font-bold text-gray-900 mb-3">
         Most Affordable Packages
@@ -1306,35 +1306,21 @@ const PricingSection = () => {
       </p>
 
       {/* Category Buttons */}
-      <div className="flex flex-wrap justify-center items-center gap-3 md:gap-4 mb-12 w-full max-w-6xl mx-auto px-4">
-  {categories.map((cat) => (
-    <button
-      key={cat}
-      onClick={() => setActive(cat)}
-      className={`
-        min-w-[130px]
-        sm:min-w-[150px]
-        md:min-w-[170px]
-        h-[46px]
-        px-6
-        rounded-full
-        text-sm
-        md:text-base
-        font-semibold
-        border
-        transition-all
-        duration-300
-        ${
-          active === cat
-            ? "bg-[#00AEEF] text-white border-[#00AEEF] shadow-lg"
-            : "bg-white text-black border-gray-300 hover:bg-[#00AEEF] hover:text-white hover:border-[#00AEEF]"
-        }
-      `}
-    >
-      {cat}
-    </button>
-  ))}
-</div>
+      <div className="flex flex-wrap justify-center gap-2 sm:gap-3 md:gap-4 mb-12 w-full max-w-4xl">
+        {categories.map((cat) => (
+          <button
+            key={cat}
+            onClick={() => setActive(cat)}
+            className={`px-4 sm:px-5 md:px-6 py-2 rounded-full text-xs sm:text-sm md:text-base font-medium border transition-all duration-200 ${
+              active === cat
+                ? "bg-[#00AEEF] text-white border-[#00AEEF]"
+                : "bg-white text-black border border-gray-300 hover:bg-gray-200"
+            }`}
+          >
+            {cat}
+          </button>
+        ))}
+      </div>
 
       {/* Slider Section */}
       <div className="w-full max-w-7xl">

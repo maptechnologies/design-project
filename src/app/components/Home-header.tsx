@@ -11,10 +11,10 @@ export default function Header() {
   return (
     <header className="absolute top-6 left-0 w-full z-[9999]">
       {/* Header Container */}
-      <div className="relative mx-auto mt-8 w-[96%] max-w-[1800px] rounded-xl bg-[#3c3c3c]/95 backdrop-blur-md px-6 md:px-10 py-4 text-white shadow-2xl">
+      <div className="relative mx-auto mt-8 w-[58%] max-w-[1800px] rounded-xl bg-[#4c4c4c]/95 backdrop-blur-md px-6 md:px-3 py-6 text-white shadow-2xl">
         
         {/* Top Right Icons */}
-        <div className="absolute right-4 -top-9 hidden md:flex gap-6 text-md items-center">
+        <div className="absolute right-4 -top-9 font-family: var(--font-serif) hidden md:flex gap-6 text-md items-center">
           <div className="flex items-center gap-2 cursor-pointer group">
             <img src="/iamge/head-email-img.webp" alt="Email" className="w-5 h-5 group-hover:rotate-180 transition duration-300" />
             <span className="group-hover:text-[black] transition">info@bloopsdesign.com</span>
@@ -34,11 +34,11 @@ export default function Header() {
           
           {/* Logo */}
           <div>
-            <img src="/iamge/logof_new.png" alt="Logo" className="h-11" />
+            <img src="/iamge/logof_new.png" alt="Logo" className="h-10" />
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-6 text-sm font-medium">
+          <nav className="hidden md:flex items-center gap-3 text-sm font-medium">
             <Link href="/" className="hover:text-[#2f92ff] transition">HOME</Link>
             <Link href="/aboute" className="hover:text-[#2f92ff] transition">ABOUT US</Link>
             <Link href="/portfolio" className="hover:text-[#2f92ff] transition">PORTFOLIO</Link>
@@ -110,7 +110,7 @@ export default function Header() {
         <Link
           key={index}
           href={item.link}
-          className="group border border-sky-300 rounded-lg h-[170px] flex flex-col items-center justify-center text-center p-4 transition-all duration-300 hover:bg-gradient-to-b hover:from-[#0084e0] hover:to-[#00d8f2] hover:shadow-xl"
+          className="group border border-sky-300 rounded-lg h-[170px] font-family: var(--font-serif) flex flex-col items-center justify-center text-center p-4 transition-all duration-300 hover:bg-gradient-to-b hover:from-[#0084e0] hover:to-[#00d8f2] hover:shadow-xl"
         >
           <img
             src={item.icon}
@@ -162,7 +162,7 @@ export default function Header() {
           {/* Request A Quote Button */}
           <Link
             href="/quote"
-            className="hidden md:block px-4 py-2 rounded-full font-bold text-sm border-2 border-[#2f92ff] text-[#2f92ff] hover:bg-[#2f92ff] hover:text-white transition"
+            className="hidden md:block px-7 py-1 rounded-full font-bold text-md border-1 border-[#2eb1c5] text-[#17a2b8] hover:bg-[#17a2b8] hover:text-white transition"
           >
             Request A Quote
           </Link>
@@ -175,7 +175,7 @@ export default function Header() {
 
         {/* Mobile Menu */}
         {mobileMenu && (
-          <div className="md:hidden mt-10 flex flex-col gap-2 text-lg">
+          <div className="md:hidden mt-10 flex flex-col gap-8 text-lg">
             <Link href="/">HOME</Link>
             <Link href="/about">ABOUT US</Link>
             <Link href="/portfolio">PORTFOLIO</Link>
@@ -196,7 +196,7 @@ export default function Header() {
             <Link href="/pricing">PRICING</Link>
             <Link href="/combopackage">COMBO PACKAGES</Link>
             <Link href="/contact">CONTACT US</Link>
-            <Link href="/quote" className="mt-2 px-4 py-2 border-2 border-[#2f92ff] rounded-full text-[#2f92ff] hover:bg-[#2f92ff] hover:text-white transition">
+            <Link href="/quote" className="mt-2 px-4 py-2 border-2 border-[#60d3eb] text-1xl rounded-full text-[#60d3eb] hover:bg-[#60d3eb] hover:text-white transition">
               Request A Quote
             </Link>
           </div>

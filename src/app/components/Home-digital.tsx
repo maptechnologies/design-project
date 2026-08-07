@@ -92,7 +92,7 @@ const Features: React.FC = () => {
                   p-6 sm:p-8 rounded-xl shadow-md hover:shadow-2xl 
                   transition-transform duration-500 ease-in-out
                   h-full min-h-[250px] flex flex-col justify-center
-                  bg-gradient-to-br from-cyan-500 to-cyan-500 text-white
+                  bg-gradient-to-br from-[#0084e0] to-[#00d8f2] text-white
                   hover:scale-105
                 "
               >

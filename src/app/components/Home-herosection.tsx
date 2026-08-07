@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, CSSProperties } from 'react';
 import AOS from 'aos';
+import { hover } from 'framer-motion';
 
 // import 'aos/dist/aos.css';
 
@@ -15,12 +16,13 @@ const slides = [
 const Slider: React.FC = () => {
   const [current, setCurrent] = useState(0);
   const [textIndex, setTextIndex] = useState(0);
-  const [displayText, setDisplayText] = useState('');
+  const [displayText, setDisplayText] = useState('0');
 
   const texts = [
     'GROW YOUR BRAND WITH US',
-    'BUILD A STRONG IDENTITY',
-    'CONNECT WITH YOUR AUDIENCE',
+    'GROW YOUR BRAND WITH US',
+    'GROW YOUR BRAND WITH US',
+    
   ];
 
   // Initialize AOS
@@ -75,14 +77,14 @@ const Slider: React.FC = () => {
     alignItems: 'center',
     justifyContent: 'center',
     flexDirection: 'column',
-    height: '100vh',
+    height: '70vh',
     paddingTop: '120px',
     width: '100%',
     position: 'relative',
     overflow: 'hidden',
     margin: 0,
 
-    backgroundImage: "url('/iamge/Untitled-1-01 1 (1).jpg')",
+    backgroundImage: "url('/iamge/Untitled-1-01 4.jpg')",
     backgroundSize: 'cover',
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat',
@@ -102,12 +104,14 @@ const Slider: React.FC = () => {
 
   const leftArrow = {
     ...arrowStyle,
-    left: '10px',
+    left: '550px',
+    color:'gray',
   };
 
   const rightArrow = {
     ...arrowStyle,
-    right: '10px',
+    right: '550px',
+    color:'gray',
   };
 
   const imageWrapper: CSSProperties = {
@@ -139,36 +143,39 @@ const Slider: React.FC = () => {
   };
 
   const textWrapper: CSSProperties = {
-    marginTop: '20px',
+    marginTop: '2px',
     textAlign: 'center',
     color: '#fff',
     minHeight: '90px',
   };
 
   const headingStyle: CSSProperties = {
-    fontSize: '40px',
+    fontSize: '47px',
     fontWeight: 'bold',
     color: '#fff',
-    whiteSpace: 'nowrap',
-    minHeight: '40px',
+    whiteSpace: '',
+    minHeight: '30px',
+    fontFamily:'sans-serif',
   };
 
   const subTextStyle: CSSProperties = {
-    fontSize: '20px',
-    marginTop: '10px',
+    fontSize: '23px',
+    marginTop: '4px',
     color: '#fff',
   };
 
   const buttonStyle: CSSProperties = {
-    marginTop: '15px',
-    padding: '10px 20px',
+    marginTop: '20px',
+    padding: '5px 35px',
     fontSize: '16px',
     fontWeight: 'bold',
     backgroundColor: '#fff',
-    color: '#000',
+    color: 'gray',
     border: 'none',
     borderRadius: '20px',
     cursor: 'pointer',
+    fontFamily:'sans-serif',
+    
   };
 
   return (
@@ -182,6 +189,33 @@ const Slider: React.FC = () => {
       >
         &#8592;
       </div>
+      {/* Left Floating Plant */}
+<img
+  src="/iamge/preview-removebg-preview.png"
+  alt="Plant"
+  style={{
+    position: "absolute",
+    left: "54px",
+    top: "230px",
+    width: "190px",
+    zIndex: 2,
+    animation: "floatPlant 7s ease-in-out infinite",
+  }}
+/>
+
+{/* Right Floating Coffee */}
+<img
+  src=""
+  alt="Coffee"
+  style={{
+    position: "absolute",
+    right: "140px",
+    top: "330px",
+    width: "190px",
+    zIndex: 20,
+    animation: "floatCoffee 7s ease-in-out infinite",
+  }}
+/>
 
       {/* Laptop */}
       <div style={imageWrapper}>
@@ -223,7 +257,7 @@ const Slider: React.FC = () => {
             style={{
               display: 'inline-block',
               marginLeft: '2px',
-              animation: 'blink 1s infinite',
+              animation: 'blink 8s infinite',
             }}
           >
             |
@@ -250,12 +284,36 @@ const Slider: React.FC = () => {
       </div>
 
       <style jsx>{`
-        @keyframes blink {
-          50% {
-            opacity: 0;
-          }
-        }
-      `}</style>
+  @keyframes blink {
+    50% {
+      opacity: 0;
+    }
+  }
+
+  @keyframes floatPlant {
+    0% {
+      transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+      transform: translateY(-20px) rotate(-6deg);
+    }
+    100% {
+      transform: translateY(0px) rotate(0deg);
+    }
+  }
+
+  @keyframes floatCoffee {
+    0% {
+      transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+      transform: translateY(-15px) rotate(8deg);
+    }
+    100% {
+      transform: translateY(0px) rotate(0deg);
+    }
+  }
+`}</style>
     </div>
   );
 };

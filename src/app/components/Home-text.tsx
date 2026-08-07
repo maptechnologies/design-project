@@ -5,7 +5,7 @@ import React, { useState, useEffect } from 'react';
 const AnimatedSection: React.FC = () => {
  const [index, setIndex] = useState(0);
 
-const text = "DESIGN";
+const text = "Dseign";
 const letters = text.split("");
 
 useEffect(() => {
@@ -17,7 +17,7 @@ useEffect(() => {
 }, [letters.length]);
 
 // 👇 YAHAN ADD KARO
-const creativeText = "CREATIVE.";
+const creativeText = "Creative.";
 const creativeLetters = creativeText.split("");
 
 const [creativeIndex, setCreativeIndex] = useState(0);
@@ -50,7 +50,7 @@ useEffect(() => {
   style={{
     position: "absolute",
     right: "20px",
-    top: "100%",
+    top: "58%",
     transform: "translateY(-50%) rotate(180deg)",
     writingMode: "vertical-rl",
     fontSize: "6vw",
