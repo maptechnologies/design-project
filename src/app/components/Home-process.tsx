@@ -47,10 +47,10 @@ const WorkProcess = () => {
         data-aos="fade-up"
         data-aos-delay="100"
       >
-        <h2 className="text-3xl sm:text-4xl font-semibold font- text-gray-800">
+        <h2 className="text-3xl sm:text-4xl font-semibold font- text-[#212529]">
           Our Work Process
         </h2>
-        <p className="text-gray-600 mt-3 max-w-2xl mx-auto text-sm sm:text-base">
+        <p className="text-gray-600 mt-3 max-w-3xl mx-auto text-2x1">
           Do you want to get recognized? We have been providing a broad range of
           business logo design, branding, digital marketing and development
           services.
@@ -70,13 +70,13 @@ const WorkProcess = () => {
             <img
               src={step.img}
               alt={step.title}
-              className="w-full h-[250px] sm:h-[300px] md:h-[380px] lg:h-[420px] object-cover transition-transform duration-700 group-hover:scale-110"
+              className="w-full h-[250px] sm:h-[300px] md:h-[380px] lg:h-[520px] object-cover transition-transform duration-700 group-hover:scale-110"
             />
 
             {/* ✅ Hover Overlay with Gray Border */}
             <div
-              className="absolute inset-0 bg-blue-600/0 group-hover:bg-cyan-300/90
-              group-hover:border-[9px] group-hover:border-gray-600 
+              className="absolute inset-0 bg-blue-600/0 group-hover:bg-cyan-400/80
+              group-hover:border-[9px] group-hover:border-[#4a4a4a] 
               transition-all duration-500 flex flex-col items-center justify-center 
               text-center p-4 sm:p-6"
             >

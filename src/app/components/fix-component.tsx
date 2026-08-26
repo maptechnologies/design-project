@@ -8,7 +8,7 @@ export default function FloatingButton() {
       href="/contact"
       className="
         fixed
-        left-[-95px]
+        left-[-98px]
         top-1/3
         -translate-y-1/2
         -rotate-90
@@ -16,7 +16,7 @@ export default function FloatingButton() {
         bg-[#4a4a4a]
         text-white
         px-5
-        py-4
+        py-3
         rounded-l-2xl
         text-2xl
         font-bold

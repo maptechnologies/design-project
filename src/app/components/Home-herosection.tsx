@@ -2,9 +2,9 @@
 
 import React, { useState, useEffect, CSSProperties } from 'react';
 import AOS from 'aos';
-import { hover } from 'framer-motion';
+//import { hover } from 'framer-motion';
 
-// import 'aos/dist/aos.css';
+ import 'aos/dist/aos.css';
 
 const slides = [
   '/iamge/slider-img-1.webp',
@@ -77,7 +77,7 @@ const Slider: React.FC = () => {
     alignItems: 'center',
     justifyContent: 'center',
     flexDirection: 'column',
-    height: '70vh',
+    height: '75vh',
     paddingTop: '120px',
     width: '100%',
     position: 'relative',
@@ -197,7 +197,7 @@ const Slider: React.FC = () => {
     position: "absolute",
     left: "54px",
     top: "230px",
-    width: "190px",
+    width: "210px",
     zIndex: 2,
     animation: "floatPlant 7s ease-in-out infinite",
   }}
@@ -205,13 +205,13 @@ const Slider: React.FC = () => {
 
 {/* Right Floating Coffee */}
 <img
-  src=""
+  src="/iamge/image-removebg-preview.png"
   alt="Coffee"
   style={{
     position: "absolute",
     right: "140px",
-    top: "330px",
-    width: "190px",
+    top: "370px",
+    width: "199px",
     zIndex: 20,
     animation: "floatCoffee 7s ease-in-out infinite",
   }}

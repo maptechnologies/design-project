@@ -1,11 +1,11 @@
 'use client';
-
+//import { div } from 'framer-motion';
 import React, { useState, useEffect } from 'react';
 
 const AnimatedSection: React.FC = () => {
  const [index, setIndex] = useState(0);
 
-const text = "Dseign";
+const text = "Design";
 const letters = text.split("");
 
 useEffect(() => {
@@ -34,12 +34,13 @@ useEffect(() => {
 
 
   return (
+   
     <div
       style={{
         display: 'flex',
         flexDirection: 'row',
         flexWrap: 'wrap',
-        minHeight: '60vh',
+        minHeight: '30vh',
         background: '#fff',
       }}
     >
@@ -84,15 +85,18 @@ useEffect(() => {
         style={{
           writingMode: 'vertical-rl',
           transform: 'rotate(180deg)',
-          fontSize: '6vw',
+          fontSize: '7vw',
           fontWeight: 'bold',
           color: '#333',
           padding: '10px',
+        paddingRight:'80px',
+          top:'45px',
+          marginBottom:'130px',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
           flexShrink: 0,
-          width: 'auto',
+          width: '100px',
         }}
       >
         
@@ -117,40 +121,42 @@ useEffect(() => {
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'center',
+          width:'100%',
           alignItems: 'center',
-          padding: '20px',
+          
           textAlign: 'center',
+     
         }}
       >
         <h1
           style={{
             fontSize: '42px',
             fontWeight: 'bold',
-            marginBottom: '20px',
+            marginBottom: '30px',
             color: '#444245',
             lineHeight: 1.2,
-            marginRight: '80px',
-            marginTop: '2px',
+            marginRight: '105px',
+            marginTop: '0',
+            fontFamily:'sans-serif',
           }}
         >
           Conceptualization, Transformation And <br /> Creativity <br />
           <span style={{ color: '#3092ff' }}></span>
         </h1>
         <p
-          style={{
-            fontSize: '21px',
-            maxWidth: '700px',
-            color: '#555',
-            lineHeight: 1.6,
-            marginRight: '80px',
-          }}
-        >
-          We possess experience of more than a decade and we shape your brand
-          according to today's business needs. We blend creative strategies,
-          outstanding designs, creative mindset and technological advancements.
-          Whether you are looking to develop your own startup or revamp your
-          present brand, we are here for you.
-        </p>
+  style={{
+    fontSize: '21px',
+    maxWidth: '830px',
+    color: '#777777',
+    lineHeight: 1.6,
+   
+    marginRight: '10px',
+    fontFamily:'sans-serif',
+  }}
+>
+  We possess experience of more than a decade and we shape your brand according to today's business needs. We blend creative strategies, outstanding designs, creative
+  mindset and technological advancements. Whether you are looking to develop your own
+  startup or revamp your present brand, we are here for you.</p>
       </div>
 
       {/* ✅ Responsive CSS */}

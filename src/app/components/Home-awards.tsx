@@ -23,7 +23,7 @@ const Awards: React.FC = () => {
         {awards.map((award, index) => (
           <div
             key={index}
-            className="flex justify-center items-center p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition"
+            className="flex justify-center items-center p-4 bg-white rounded-lg  "
           >
             <img
               src={award.img}
