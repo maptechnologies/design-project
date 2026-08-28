@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+   import { AnimatePresence, motion, type Variants } from "framer-motion";
 
 /**
  * RecentWork.tsx
