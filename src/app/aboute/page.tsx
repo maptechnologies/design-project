@@ -18,16 +18,16 @@ const AboutHero: React.FC = () => {
  
         {/* Left Side Image */}
         <img
-          src=""
+          src="/iamge/image__1_-removebg-preview.png"
           alt="Hero Left"
-          className="hidden lg:block absolute left-6 xl:left-16 top-1/2 -translate-y-1/2 w-40 xl:w-56 h-auto rounded-xl shadow-lg z-10 animate__animated animate__fadeInLeft"
+          className="hidden lg:block absolute left-6 xl:left-16 top-1/2 -translate-y-1/2 w-90 xl:w-120 h-120  shadow-lg z-10 animate__animated animate__fadeInLeft"
         />
  
         {/* Right Side Image */}
         <img
           src="/iamge/image__1_-removebg-preview (1).png"
           alt="Hero Right"
-          className="hidden lg:block absolute right-6 xl:right-16 top-1/2 -translate-y-1/2 w-90 xl:w-56 h-auto rounded-xl shadow-lg z-10 animate__animated animate__fadeInRight"
+          className="hidden lg:block absolute right-6 xl:right-0 top-1/2 -translate-y-1/2 w-90 xl:w-120 h-120  shadow-lg z-10 animate__animated animate__fadeInRight"
         />
  
         <div className="relative text-center max-w-3xl animate__animated animate__fadeInUp z-10">
