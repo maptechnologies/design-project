@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect } from "react";
 import AOS from "aos";
-import "aos/dist/aos.css";
+//import "aos/dist/aos.css";
 
 const WorkProcess = () => {
   useEffect(() => {
@@ -16,25 +16,25 @@ const WorkProcess = () => {
     {
       id: "01",
       title: "Design Brief",
-      img: "/iamge/process-img-1.webp",
+      img: "/iamge/design048.webp",
       text: "The process begins with your delivery of what you have in mind for the logo, which is going to go ahead and represent your brand for you. This is where we begin the construction of the logo.",
     },
     {
       id: "02",
       title: "Research & Sketch",
-      img: "/iamge/process-img-2.webp",
+      img: "/iamge/design049.webp",
       text: "Now that we are clear with what ingredients must be included to brew the perfect logo for you, our designers will come up with a concept and make a draft to begin the collaborative design process.",
     },
     {
       id: "03",
       title: "Revision",
-      img: "/iamge/process-img-3.webp",
+      img: "/iamge/design050.webp",
       text: "Once we are satisfied with our Designs, we share it with the client. We are however completely open for constructive feedback and revisions.",
     },
     {
       id: "04",
       title: "Final Delivery",
-      img: "/iamge/process-img-4.webp",
+      img: "/iamge/design051.webp",
       text: "After having the files reviewed by the client and after having the errors removed, we deliver the project and all the necessary format files.",
     },
   ];

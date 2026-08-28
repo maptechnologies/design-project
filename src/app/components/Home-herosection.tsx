@@ -7,10 +7,10 @@ import AOS from 'aos';
  import 'aos/dist/aos.css';
 
 const slides = [
-  '/iamge/slider-img-1.webp',
-  '/iamge/slider-img-2.webp',
-  '/iamge/slider-img-3.webp',
-  '/iamge/slider-img-4.webp',
+  '/iamge/design021.webp',
+  '/iamge/design023.webp',
+  '/iamge/design025.webp',
+  '/iamge/design027.webp',
 ];
 
 const Slider: React.FC = () => {

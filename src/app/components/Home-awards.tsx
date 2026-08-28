@@ -4,11 +4,11 @@ import React from "react";
 
 const Awards: React.FC = () => {
   const awards = [
-    { img: "/iamge/award-img-1.webp", alt: "Santa Casa" },
-    { img: "/iamge/award-img-2.webp", alt: "Quantano Community" },
-    { img: "/iamge/award-img-3.webp", alt: "Asia Young Designer" },
-    { img: "/iamge/award-img-4.webp", alt: "German Design Award" },
-    { img: "/iamge/award-img-5.webp", alt: "International Award" },
+    { img: "/iamge/design052.webp", alt: "Santa Casa" },
+    { img: "/iamge/design053.webp", alt: "Quantano Community" },
+    { img: "/iamge/design054.webp", alt: "Asia Young Designer" },
+    { img: "/iamge/design055.webp", alt: "German Design Award" },
+    { img: "/iamge/design056.webp", alt: "International Award" },
   ];
 
   return (

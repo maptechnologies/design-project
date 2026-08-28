@@ -1,94 +1,160 @@
 "use client";
 
-import React from "react";
+import { useState } from "react";
 import { Phone, MessageCircle } from "lucide-react";
 
-const ContactForm: React.FC = () => {
+export default function ContactSection() {
+  const [agreed, setAgreed] = useState(false);
+
   return (
-    <section className="bg-white py-16">
-      <div className="max-w-6xl mx-auto px-6">
+    <section className="relative w-full bg-white py-16 sm:py-24">
+      {/* Vertical "Let's Get Started" tab */}
+      <div className="absolute left-0 top-24 hidden md:flex">
+        <div className="flex items-center justify-center rounded-r-md bg-[#2b2b2b] px-3 py-6">
+          <span
+            className="text-sm font-bold tracking-wide text-white"
+            style={{ writingMode: "vertical-rl", transform: "rotate(180deg)" }}
+          >
+            Let&apos;s Get Started
+          </span>
+        </div>
+      </div>
+
+      <div className="mx-auto max-w-5xl px-6">
         {/* Heading */}
-        <div className="text-center mb-10">
-          <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-black via-black to-black bg-clip-text text-transparent">
+        <div className="text-center">
+          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">
             Get In Touch With Us
           </h2>
-          <p className="text-gray-600 mt-2">
-            Our friendly call center representatives are always available round
-            the clock for any guidence
+          <p className="mt-4 text-gray-500">
+            Our friendly call center representatives are always available
+            round the clock for any guidance
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
-          {/* Left Info */}
-          <div className="space-y-6">
-            <h3 className="text-3xl font-bold bg-gradient-to-r from-cyan-500 via-cyan-500 to-cyan-500 bg-clip-text text-transparent">
-              Let’s Talk.
+        {/* Content */}
+        <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8">
+          {/* Left: Let's Talk */}
+          <div>
+            <h3 className="text-4xl font-semibold text-[#60d2ee]">
+              Let&apos;s Talk.
             </h3>
 
-            <div className="flex items-start space-x-4">
-              <Phone className="text-cyan-500 w-6 h-6 mt-1" />
+            <div className="mt-6 flex items-center gap-3">
+              <Phone className="text-[#60d2ee]" size={28} />
               <div>
-                <p className="text-xs uppercase text-gray-500">Call Us At</p>
-                <p className="text-lg font-bold bg-gradient-to-r from-cyan-500 via-cyan-500 to-cyan-500 bg-clip-text text-transparent">
-                  (313) 512-9347
+                <p className="text-sm font-semibold tracking-wide text-gray-500">
+                  CALL US AT
                 </p>
+                <a
+                  href="tel:+13135129347"
+                  className="text-lg font-bold text-[#60d2ee] hover:underline"
+                >
+                  (313) 512-9347
+                </a>
               </div>
             </div>
 
-            <p className="text-gray-600 text-sm">
-              We are available on live chat! Just ping us and we will take care
-              of it all.
-            </p>
+            <div className="mt-6 border-t border-gray-200 pt-6">
+              <p className="text-gray-500 leading-relaxed">
+                We are available on live chat! Just ping us and we will take
+                care of it all.
+              </p>
+            </div>
 
-            <div className="flex items-start space-x-4">
-              <MessageCircle className="text-cyan-500 w-6 h-6 mt-1" />
+            <div className="mt-6 flex items-center gap-3">
+              <MessageCircle
+                className="fill-[#60d2ee] text-[#60d2ee]"
+                size={28}
+              />
               <div>
-                <p className="text-xs uppercase text-gray-500">Let’s Chat Now</p>
-                <p className="text-lg font-bold bg-gradient-to-r from-cyan-500 via-cyan-500 to-cyan-500 bg-clip-text text-transparent">
-                  Live Chat
+                <p className="text-xs font-semibold tracking-wide text-gray-500">
+                  LET&apos;S CHAT NOW
                 </p>
+                <button
+                  type="button"
+                  className="text-lg font-bold text-[#60d2ee] hover:underline"
+                >
+                  LIVE CHAT
+                </button>
               </div>
             </div>
           </div>
 
-          {/* Right Side Form */}
-          <form className="space-y-5">
+          {/* Right: Form */}
+          <form className="md:col-span-2 space-y-4">
             <input
               type="text"
               placeholder="First Name *"
-              className="w-full rounded-md p-3 border border-gray-300 text-gray-700 focus:outline-none focus:ring-2 focus:ring-cyan-500"
+              required
+              className="w-full border border-gray-300 px-4 py-3.5 text-gray-700 placeholder-gray-400 outline-none focus:border-cyan-400"
             />
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <input
-                type="text"
-                placeholder="Phone *"
-                className="w-full rounded-md p-3 border border-gray-300 text-gray-700 focus:outline-none focus:ring-2 focus:ring-cyan-500"
+                type="tel"
+                placeholder="Phone Number*"
+                required
+                className="w-full border border-gray-300 px-4 py-3.5 text-gray-700 placeholder-gray-400 outline-none focus:border-cyan-400"
               />
               <input
                 type="email"
                 placeholder="Email Address *"
-                className="w-full rounded-md p-3 border border-gray-300 text-gray-700 focus:outline-none focus:ring-2 focus:ring-cyan-500"
+                required
+                className="w-full border border-gray-300 px-4 py-3.5 text-gray-700 placeholder-gray-400 outline-none focus:border-cyan-400"
               />
             </div>
 
             <textarea
               placeholder="Requirement *"
+              required
               rows={4}
-              className="w-full rounded-md p-3 border border-gray-300 text-gray-700 focus:outline-none focus:ring-2 focus:ring-cyan-500"
-            ></textarea>
+              className="w-full resize-none border border-gray-300 px-4 py-3.5 text-gray-700 placeholder-gray-400 outline-none focus:border-cyan-400"
+            />
 
-            <button
-              type="submit"
-              className="px-8 py-3 rounded-full border border-cyan-500 text-black font-semibold shadow-sm hover:bg-cyan-500 hover:text-amber-50 transition"
-            >
-              SEND NOW
-            </button>
+            {/* Consent checkbox */}
+            <div className="flex items-start gap-3 pt-2">
+              <input
+                type="checkbox"
+                id="sms-consent"
+                checked={agreed}
+                onChange={(e) => setAgreed(e.target.checked)}
+                className="mt-1 h-4 w-4 shrink-0 accent-cyan-400"
+              />
+              <label
+                htmlFor="sms-consent"
+                className="text-xs text-black leading-relaxed"
+              >
+                I agree to receive SMS/text messages from Bloops Designs.
+                Message and data rates may apply. Message frequency varies.
+                Reply STOP to opt out. Reply HELP for more information.
+                Consent is not a condition of purchase.
+              </label>
+            </div>
+
+            <p className="text-xs text-gray-400 leading-relaxed">
+              By submitting this form, I agree to receive recurring SMS/text
+              messages from Bloops Designs regarding my account, services,
+              promotions, and/or other requested information. Message and
+              data rates may apply. Message frequency varies. Reply STOP to
+              opt out. Reply HELP for more information. Consent is not a
+              condition of purchase. By providing my phone number and
+              submitting this form, I confirm that I am authorized to provide
+              this number and consent to receive SMS messages from Bloops
+              Designs.
+            </p>
+
+            <div className="pt-2">
+              <button
+                type="submit"
+                className="rounded-full border-2 border-[#0092e3] px-10 py-3 font-bold text-gray-900 transition-colors hover:bg-cyan-400 hover:text-white"
+              >
+                SEND NOW
+              </button>
+            </div>
           </form>
         </div>
       </div>
     </section>
   );
-};
-
-export default ContactForm;
+}

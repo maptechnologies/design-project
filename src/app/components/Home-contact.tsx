@@ -1,39 +1,55 @@
 "use client";
 
-import React from "react";
 import { Phone } from "lucide-react";
 
-const AnimatedContact: React.FC = () => {
+export default function CtaBanner() {
   return (
-    <section className="relative py-12 md:py-16 bg-gradient-to-r from-[#0084e0]  to-cyan-500 animate-gradient-x">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-10 text-white">
-        {/* Left Side */}
-        <div className="text-center md:text-left space-y-4">
-          <p className="uppercase text-xs sm:text-sm opacity-80">Contact Us</p>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold bg-gradient-to-r from-yellow-300 via-pink-500 to-purple-600 bg-clip-text  text-white text-transparent leading-snug">
-            Let’s write your <br /> story, together.
+    <section className="w-full bg-gradient-to-br from-blue-600 via-sky-500 to-cyan-400 py-10 sm:py-10">
+      <div className="mx-auto flex max-w-6xl flex-col items-center gap-8 px-6 md:flex-row md:items-center md:justify-center md:gap-16">
+        {/* Left: heading */}
+        <div className="text-center md:text-left">
+          <p className="text-sm font-medium tracking-wide text-white/90">
+            Contact Us
+          </p>
+          <h2 className="mt-2 text-3xl sm:text-4xl font-semibold leading-[1.12] text-white">
+            Let&apos;s write your
+            <br />
+            story, together.
           </h2>
         </div>
 
-        {/* Right Side */}
-        <div className="flex flex-col justify-center items-center md:items-start space-y-4">
-          <p className="text-xs md:text-md md:text-base max-w-md text-center md:text-left">
-            We do not tell you our own story. We write it together. Partnering
-            with us means a seat at the table where your voice will be heard.
+        {/* Right: text + CTA + phone */}
+        <div className="flex flex-col items-center gap-5 text-center  ml-39 md:max-w-sm md:items-start md:text-left">
+          <p className="leading-relaxed text-white/95">
+            We do not tell you our story. We write it together. Partnering
+            with us means a seat at the table where you will be heard.
           </p>
 
-          <button className="px-5 sm:px-6 py-2 sm:py-3 bg-white text-black rounded-full font-semibold shadow-md hover:opacity-88 transition">
-            Contact Us
-          </button>
+          <div className="flex flex-wrap items-center justify-center gap-12 md:justify-start">
+            <a
+              href="/contact-us"
+              className="rounded-full bg-white px-8 py-3 font-bold text-gray-900 transition-colors hover:bg-gray-100"
+            >
+              Contact Us
+            </a>
 
-          <div className="flex items-center space-x-2 sm:space-x-3">
-            <Phone className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
-            <p className="font-bold text-sm sm:text-base">(313) 512-9347</p>
+            <a
+              href="tel:+13135129347"
+              className="flex items-center gap-3 text-white"
+            >
+              <Phone size={22} className="shrink-0" />
+              <span>
+                <span className="block text-xs font-semibold tracking-wide">
+                  CALL US AT
+                </span>
+                <span className="block text-base font-bold">
+                  (313) 512-9347
+                </span>
+              </span>
+            </a>
           </div>
         </div>
       </div>
     </section>
   );
-};
-
-export default AnimatedContact;
+}

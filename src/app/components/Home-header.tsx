@@ -17,7 +17,7 @@ export default function Header() {
         <div className="absolute right-4 -top-9 font-family: var(--font-serif) hidden lg:flex gap-4 xl:gap-6 text-sm xl:text-md items-center">
           <div className="flex items-center gap-2 cursor-pointer group">
             <img
-              src="/iamge/head-email-img.webp"
+              src="/iamge/design003.webp"
               alt="Email"
               className="w-5 h-5 group-hover:rotate-180 transition duration-300"
             />
@@ -28,7 +28,7 @@ export default function Header() {
 
           <div className="flex items-center gap-2 cursor-pointer group">
             <img
-              src="/iamge/head-phone-img.webp"
+              src="/iamge/design004.webp"
               alt="Phone"
               className="w-5 h-5 group-hover:rotate-180 transition duration-300"
             />
@@ -39,7 +39,7 @@ export default function Header() {
 
           <div className="flex items-center gap-2 cursor-pointer group">
             <img
-              src="/iamge/chat-img-1.webp"
+              src="/iamge/design005.webp"
               alt="Chat"
               className="w-5 h-5 group-hover:rotate-180 transition duration-300"
             />
@@ -55,7 +55,7 @@ export default function Header() {
           {/* Logo */}
           <div className="shrink-0">
             <img
-              src="/iamge/logof_new.png"
+              src="/iamge/design006.png"
               alt="Logo"
               className="h-8 sm:h-9 md:h-10 w-auto"
             />
