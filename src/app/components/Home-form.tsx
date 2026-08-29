@@ -10,14 +10,7 @@ export default function ContactSection() {
     <section className="relative w-full bg-white py-16 sm:py-24">
       {/* Vertical "Let's Get Started" tab */}
       <div className="absolute left-0 top-24 hidden md:flex">
-        <div className="flex items-center justify-center rounded-r-md bg-[#2b2b2b] px-3 py-6">
-          <span
-            className="text-sm font-bold tracking-wide text-white"
-            style={{ writingMode: "vertical-rl", transform: "rotate(180deg)" }}
-          >
-            Let&apos;s Get Started
-          </span>
-        </div>
+        
       </div>
 
       <div className="mx-auto max-w-5xl px-6">
