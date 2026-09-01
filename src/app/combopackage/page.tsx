@@ -5,7 +5,7 @@ import Awards from "../components/Home-awards";
 import ContactForm from "../components/Home-form";
 import AnimatedContact from "../components/Home-contact";
 import Footer from "../components/Home-footer";
-import Herosection from "../components/portfolio/Portfolio-herosection";
+import Herosection from "../components/portfolio/page";
 import HeroSection from "../portfolio/page";
 import Page1 from "./Page1";
 // import HeroSection from "../pricing/page";

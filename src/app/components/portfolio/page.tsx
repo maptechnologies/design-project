@@ -6,7 +6,7 @@ const Herosection = () => {
         className="relative w-full h-[600px] bg-cover bg-center flex items-center justify-center"
         style={{
           backgroundImage:
-            "url('/iamge/istockphoto-1591225732-612x612.webp')", // ✅ Make sure spelling `image` is correct in public folder
+            "url('/iamge/design1.webp')", // ✅ Make sure spelling `image` is correct in public folder
         }}
       >
         {/* Overlay */}

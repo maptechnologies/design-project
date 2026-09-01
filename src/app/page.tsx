@@ -14,7 +14,7 @@ import Portfolio1 from "./components/Home-work";
 import Process from "./components/Home-process";
 import Testimonial from "./components/Home-testimonial";
 import Text from "./components/Home-text";
-import Herosection from "./components/portfolio/Portfolio-herosection";
+import Herosection from "./components/portfolio/page";
 import HeroSection from "./components/Home-herosection";
 //import FloatingButton from "./components/fix-component";
 // import ServicesGrid from "./service/page";/
@@ -43,7 +43,7 @@ export default function () {
       <Testimonial />
       < Form />
       <Contact />
-      <Footer />
+      
 
 
 
