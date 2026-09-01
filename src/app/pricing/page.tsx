@@ -11,9 +11,9 @@ const HeroSection: React.FC = () => {
     <>
       {/* ---------- HERO SECTION START ---------- */}
       <section
-        className="relative w-full h-[600px] bg-cover bg-center flex items-center justify-center"
+        className="relative w-full h-[900px] bg-cover bg-center flex items-center justify-center"
         style={{
-          backgroundImage: "url('/iamge/pricing-page-banner (1).jpg')", // ✅ Make sure your image is in public/image/
+          backgroundImage: "url('/iamge/design1.jpg')", // ✅ Make sure your image is in public/image/
         }}
       >
         {/* Overlay (optional dark layer) */}
@@ -38,7 +38,7 @@ OUR CUSTOMERS <br />
       <Awards />
       <ContactForm />
       <AnimatedContact />
-      <Footer />
+     
     </>
   );
 };

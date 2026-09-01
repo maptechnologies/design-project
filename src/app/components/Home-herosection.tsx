@@ -78,7 +78,7 @@ const Slider: React.FC = () => {
     justifyContent: 'center',
     flexDirection: 'column',
     height: '75vh',
-    paddingTop: '120px',
+    paddingTop: 'clamp(70px, 10vw, 120px)',
     width: '100%',
     position: 'relative',
     overflow: 'hidden',
@@ -91,10 +91,10 @@ const Slider: React.FC = () => {
   };
 
   const arrowStyle: CSSProperties = {
-    fontSize: '40px',
+    fontSize: 'clamp(22px, 4vw, 40px)',
     color: '#fff',
     cursor: 'pointer',
-    padding: '20px',
+    padding: 'clamp(8px, 2vw, 20px)',
     zIndex: 5,
     userSelect: 'none',
     position: 'absolute',
@@ -104,13 +104,13 @@ const Slider: React.FC = () => {
 
   const leftArrow = {
     ...arrowStyle,
-    left: '550px',
+    left: 'clamp(10px, 34.375vw, 550px)',
     color:'gray',
   };
 
   const rightArrow = {
     ...arrowStyle,
-    right: '550px',
+    right: 'clamp(10px, 34.375vw, 550px)',
     color:'gray',
   };
 
@@ -146,11 +146,12 @@ const Slider: React.FC = () => {
     marginTop: '2px',
     textAlign: 'center',
     color: '#fff',
-    minHeight: '90px',
+    minHeight: 'clamp(60px, 12vw, 90px)',
+    padding: '0 12px',
   };
 
   const headingStyle: CSSProperties = {
-    fontSize: '47px',
+    fontSize: 'clamp(24px, 5vw, 47px)',
     fontWeight: 'bold',
     color: '#fff',
     whiteSpace: '',
@@ -159,15 +160,15 @@ const Slider: React.FC = () => {
   };
 
   const subTextStyle: CSSProperties = {
-    fontSize: '23px',
+    fontSize: 'clamp(14px, 2.3vw, 23px)',
     marginTop: '4px',
     color: '#fff',
   };
 
   const buttonStyle: CSSProperties = {
     marginTop: '20px',
-    padding: '5px 35px',
-    fontSize: '16px',
+    padding: 'clamp(5px, 1vw, 6px) clamp(18px, 4vw, 35px)',
+    fontSize: 'clamp(13px, 1.6vw, 16px)',
     fontWeight: 'bold',
     backgroundColor: '#fff',
     color: 'gray',
@@ -195,9 +196,9 @@ const Slider: React.FC = () => {
   alt="Plant"
   style={{
     position: "absolute",
-    left: "54px",
-    top: "230px",
-    width: "210px",
+    left: "clamp(10px, 3.4vw, 54px)",
+    top: "38%",
+    width: "clamp(80px, 13vw, 210px)",
     zIndex: 2,
     animation: "floatPlant 7s ease-in-out infinite",
   }}
@@ -209,9 +210,9 @@ const Slider: React.FC = () => {
   alt="Coffee"
   style={{
     position: "absolute",
-    right: "140px",
-    top: "370px",
-    width: "199px",
+    right: "clamp(10px, 8.75vw, 140px)",
+    top: "62%",
+    width: "clamp(70px, 12.4vw, 199px)",
     zIndex: 20,
     animation: "floatCoffee 7s ease-in-out infinite",
   }}
