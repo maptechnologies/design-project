@@ -1,57 +1,61 @@
 "use client";
+
 import React from "react";
-import { motion } from "framer-motion";
-import ContactForm from "../components/Home-form";
-import AnimatedContact from "../components/Home-contact";
-import Footer from "../components/Home-footer";
+import { MessageSquare } from "lucide-react";
+import ContactSection from "../components/Home-form";
 
-const ContactSection: React.FC = () => {
+export default function ContactHero() {
   return (
-    <><section className="relative w-full bg--to-r from-green-500 to-green-100 py-30 px-8 flex flex-col md:flex-row items-center justifycontant-center overflow-hidden">
+    <section
+      className="relative w-full h-[900] overflow-hidden py-16 sm:py-20 lg:py-80 px-6 sm:px-10 lg:px-16 bg-cover bg-center bg-no-repeat"
+      style={{
+        backgroundImage: "url('/iamge/design1.jpg')", // ✅ Make sure folder is /image not /iamge
+      }}
+    >
+      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-10 lg:gap-6">
+        {/* Left: Text content */}
+        <div className="flex-1 text-center lg:text-left">
+          <p className="text-white/90 text-sm sm:text-base tracking-widest uppercase mb-3">
+            Contact Us
+          </p>
 
-          {/* Left Side Text */}
-          <div className="md:w-1/2 space-y-4">
-              <p className="text-white text-bold uppercase tracking-wide">Contact Us</p>
-              <h2 className="text-3xl md:text-4xl font-bold text-white-800 leading-snug">
-                  Get In Touch With <br />
-                  The Reliable Digital <br />
-                  Marketing Agency
-              </h2>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white leading-tight mb-8">
+            Get In Touch With
+            <br />
+            The Reliable Digital
+            <br />
+            Marketing Agency
+          </h1>
 
-              {/* Buttons */}
-              <div className="mt-6 flex gap-4">
-                  <button className="px-5 py-3 rounded-full bg-white border text-teal-600 shadow hover:bg-teal-600 hover:text-white transition">
-                      Request a Quote
-                  </button>
-                  <button className="px-5 py-3 rounded-full bg-black text-white shadow hover:bg-gray-800 transition">
-                      Live Chat
-                  </button>
-              </div>
+          <div className="flex flex-wrap justify-center lg:justify-start gap-4">
+            <a
+              href="/quote"
+              className="px-6 py-3 rounded-full bg-white text-[#17a2b8] font-semibold text-sm hover:bg-gray-100 transition-colors duration-200"
+            >
+              Request a Quote
+            </a>
+
+            <a
+              href="#live-chat"
+              className="flex items-center gap-2 px-6 py-3 rounded-full bg-[#1c1c1c] text-white font-semibold text-sm hover:bg-black transition-colors duration-200"
+            >
+              <MessageSquare className="w-4 h-4" />
+              Live Chat
+            </a>
           </div>
+        </div>
 
-          {/* Right Side Image with Animation */}
-          <motion.div
-              className="md:w-1/2 mt-10 md:mt-0 flex justify-center"
-              initial={{ y: 50, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{
-                  duration: 1,
-                  ease: "easeOut",
-                  repeat: Infinity,
-                  repeatType: "reverse"
-              }}
-          >
-              <img
-                  src="/iamge/contact-banner-img.webp" // 👈 yahan apni image ka path lagao
-                  alt="Contact Illustration"
-                  className="max-w-md w-full" />
-          </motion.div>
-      </section><div>
-        <ContactForm/>
-        <AnimatedContact/>
-        <Footer/>
-        </div></>
+        {/* Right: Illustration */}
+        <div className="flex-1 flex justify-center lg:justify-end">
+          <img
+            src="/iamge/design1.webp"
+            alt="Customer support illustration"
+            className="w-full max-w-md lg:max-w-lg h-auto object-contain"
+          />
+        </div>
+      </div>
+      
+    </section>
+    
   );
-};
-
-export default ContactSection;
+}
