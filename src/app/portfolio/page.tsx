@@ -217,7 +217,7 @@ const HeroSection: React.FC = () => {
           HERO SECTION
       ================================= */}
       <section
-        className="relative w-full h-[900px] bg-cover bg-center flex justify-center"
+        className="relative w-full h-[500px] sm:h-[650px] md:h-[780px] lg:h-[900px] bg-cover bg-center flex justify-center"
         style={{
           backgroundImage: "url('/iamge/design1.jpg')", // ✅ Make sure folder is /image not /iamge
         }}
@@ -231,7 +231,7 @@ const HeroSection: React.FC = () => {
             top: "102%",
             transform: "translateY(-50%) rotate(180deg)",
             writingMode: "vertical-rl",
-            fontSize: "7vw",
+            fontSize: "clamp(1.75rem, 7vw, 6rem)",
             fontWeight: "bold",
             color: "#333",
             padding: "10px",
@@ -266,7 +266,7 @@ const HeroSection: React.FC = () => {
             top: "50%",
             transform: "translateY(-50%) rotate(180deg)",
             writingMode: "vertical-rl",
-            fontSize: "7vw",
+            fontSize: "clamp(1.75rem, 7vw, 6rem)",
             fontWeight: "bold",
             color: "#333",
             padding: "10px",
@@ -296,13 +296,13 @@ const HeroSection: React.FC = () => {
         <img
           src="/iamge/design1.webp" // ✅ Replace with your overlay image name
           alt="Center Overlay"
-          className="absolute inset-0 m-auto z-10 max-w-[60%] max-h-[80%] w-auto h-auto mb-35 object-contain"
+          className="absolute inset-0 m-auto z-10 max-w-[75%] sm:max-w-[65%] md:max-w-[60%] max-h-[70%] sm:max-h-[75%] md:max-h-[80%] w-auto h-auto mb-16 sm:mb-24 md:mb-35 object-contain"
         />
 
         {/* Content */}
-        <div className="relative z-20 text-center backdrop rounded-xl shadow-lg px-2 py-0">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl mt-72 font-semibold text-white">
-            <span className="bg-gradient-to-r from-white via-white to-white bg-clip-text text-transparent tracking-wide leading-[1.2]">
+        <div className="relative z-20 text-center backdrop rounded-xl shadow-lg px-4 py-0">
+          <h1 className="text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl mt-40 sm:mt-56 md:mt-64 lg:mt-72 font-semibold text-white">
+            <span className="bg-gradient-to-r from-white via-white to-white bg-clip-text text-transparent tracking-wide leading-[1.3] sm:leading-[1.2]">
               CREATING BRAND
               <br />
               FOCUSED CREATIVE
@@ -317,24 +317,24 @@ const HeroSection: React.FC = () => {
           RECENT WORK SECTION (Hero ke turant neeche)
       ================================= */}
       <section className="w-full bg-white py-0">
-        <div className="mx-auto max-w-6xl  mt-30 text-center">
-          <h2 className="text-3xl lg:text-4xl md:text-5xl font-bold text-gray-900 tracking-tight">
+        <div className="mx-auto max-w-6xl px-4 mt-14 sm:mt-20 md:mt-30 text-center">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl md:text-5xl font-bold text-gray-900 tracking-tight">
            Have a look at our work for our customers
           </h2>
 
-          <p className="mt-5 text-gray-500  md:text-md max-w-2xl mx-auto leading-relaxed">
+          <p className="mt-4 sm:mt-5 text-gray-500 text-sm sm:text-base md:text-md max-w-2xl mx-auto leading-relaxed">
             We make sure to deliver high quality work for customers that is according to their demands. Catch a glimpse of our
 portfolio now
           </p>
 
-          <div className="mt-12 flex flex-wrap items-center justify-center gap-x-8 gap-y-3">
+          <div className="mt-8 sm:mt-12 flex flex-wrap items-center justify-center gap-x-4 sm:gap-x-8 gap-y-3">
             {CATEGORIES.map((cat) => {
               const isActive = cat === active;
               return (
                 <button
                   key={cat}
                   onClick={() => handleCategoryClick(cat)}
-                  className={`relative text-sm sm:text-base font-semibold transition-colors duration-200 pb-1 ${
+                  className={`relative text-xs sm:text-sm md:text-base font-semibold transition-colors duration-200 pb-1 ${
                     isActive
                       ? "text-sky-500"
                       : "text-gray-900 hover:text-sky-500"
@@ -362,14 +362,14 @@ portfolio now
                 transition={{ duration: 0.25 }}
                 className="overflow-hidden"
               >
-                <div className="mt-6 flex flex-wrap items-center justify-center gap-2">
+                <div className="mt-6 flex flex-wrap items-center justify-center gap-2 px-2">
                   {VIDEO_SUBCATEGORIES.map((sub) => {
                     const isSubActive = sub === activeSub;
                     return (
                       <button
                         key={sub}
                         onClick={() => handleSubClick(sub)}
-                        className={`text-xs sm:text-sm font-medium px-4 py-1.5 rounded-full border transition-colors duration-200 ${
+                        className={`text-xs sm:text-sm font-medium px-3 sm:px-4 py-1.5 rounded-full border transition-colors duration-200 ${
                           isSubActive
                             ? "bg-sky-500 text-white border-sky-500"
                             : "bg-transparent text-gray-500 border-gray-300 hover:border-sky-400 hover:text-sky-500"
@@ -385,7 +385,7 @@ portfolio now
           </AnimatePresence>
         </div>
 
-        <div className="w-full mt-14">
+        <div className="w-full mt-10 sm:mt-14">
           <AnimatePresence mode="wait">
             <motion.div
               key={isVideo ? `${active}-${activeSub}` : active}
@@ -393,7 +393,7 @@ portfolio now
               initial="hidden"
               animate="show"
               exit="exit"
-              className="grid grid-cols-2 sm:grid-cols-3"
+              className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3"
             >
               {filtered.length === 0 ? (
                 <p className="col-span-full text-center text-gray-400 py-10">
@@ -405,7 +405,7 @@ portfolio now
                     key={`${work.img}-${idx}`}
                     variants={card}
                     onClick={() => setPopupImage(work.img)}
-                    className="gallery-img-box group relative h-64 sm:h-72 lg:h-[385px] w-full overflow-hidden cursor-pointer"
+                    className="gallery-img-box group relative h-56 xs:h-64 sm:h-72 lg:h-[385px] w-full overflow-hidden cursor-pointer"
                   >
                     <img
                       src={work.img}
@@ -431,8 +431,8 @@ portfolio now
       {/* =========================================
           LET'S GET STARTED BUTTON
       ========================================= */}
-      <div className="w-full flex justify-center py-16 bg-white">
-        <button className="px-10 py-2 rounded-full border-2 border-sky-500 text-gray-900 font-semibold text-sm sm:text-base tracking-wide hover:bg-[#0087e0] hover:text-white transition-colors duration-300">
+      <div className="w-full flex justify-center py-10 sm:py-16 bg-white px-4">
+        <button className="px-6 sm:px-10 py-2 rounded-full border-2 border-sky-500 text-gray-900 font-semibold text-sm sm:text-base tracking-wide hover:bg-[#0087e0] hover:text-white transition-colors duration-300 whitespace-nowrap">
           LET&apos;S GET STARTED
         </button>
       </div>
@@ -451,7 +451,7 @@ portfolio now
           >
             <button
               onClick={() => setPopupImage(null)}
-              className="absolute top-5 right-5 z-[100000] flex h-12 w-12 items-center justify-center rounded-full bg-white text-black text-3xl font-bold shadow-lg transition-transform duration-200 hover:scale-110"
+              className="absolute top-4 right-4 sm:top-5 sm:right-5 z-[100000] flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-full bg-white text-black text-2xl sm:text-3xl font-bold shadow-lg transition-transform duration-200 hover:scale-110"
               aria-label="Close"
             >
               ×

@@ -62,7 +62,7 @@ export default function Header() {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center justify-center gap-2 xl:gap-3 text-xs xl:text-sm font-medium whitespace-nowrap">
+          <nav className="hidden lg:flex items-center justify-center gap-2 xl:gap-3 text-xs xl:text-md font-medium ">
 
             <Link
               href="/"
@@ -223,7 +223,7 @@ export default function Header() {
           {/* Request A Quote Button */}
           <Link
             href="/quote"
-            className="hidden lg:flex shrink-0 items-center justify-center whitespace-nowrap px-4 xl:px-6 py-2 rounded-full font-bold text-xs xl:text-base border-2 border-[#2eb1c5] text-[#17a2b8] hover:bg-[#17a2b8] hover:text-white transition-all duration-300"
+            className="hidden lg:flex shrink-0 items-center justify-center whitespace-nowrap px-4 xl:px-6 py-1 rounded-full font-bold text-xs xl:text-base border-1 border-[#2eb1c5] text-[#17a2b8] hover:bg-[#17a2b8] hover:text-white transition-all duration-300"
           >
             Request A Quote
           </Link>
@@ -270,7 +270,7 @@ export default function Header() {
             <details className="group">
               <summary className="cursor-pointer list-none flex items-center justify-between">
                 <span>SERVICES</span>
-                <span className="text-xs transition-transform group-open:rotate-180">
+                <span className="text-md transition-transform group-open:rotate-180">
                   ▼
                 </span>
               </summary>
