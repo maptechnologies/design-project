@@ -19,7 +19,7 @@ const AnimatedSection: React.FC = () => {
       style={{
         display: 'flex',
         flexDirection: 'row',
-        minHeight: '80vh',
+        minHeight: '35vh',
         background: '#fff',
         flexWrap: 'wrap',
       }}
@@ -61,7 +61,7 @@ const AnimatedSection: React.FC = () => {
           flexDirection: 'column',
           justifyContent: 'center',
           alignItems: 'center',
-          padding: '20px',
+          padding: '10px',
           textAlign: 'center',
         }}
       >
@@ -77,7 +77,7 @@ const AnimatedSection: React.FC = () => {
           }}
         >
           Logos We 
-          <span style={{ color: '#3092ff' }}> Create</span>
+          <span style={{ }}> Create</span>
         </h1>
         <p
           style={{
@@ -85,7 +85,7 @@ const AnimatedSection: React.FC = () => {
             maxWidth: '700px',
             color: '#555',
             lineHeight: 1.6,
-            marginRight:'80px',
+            marginRight:'70px',
           }}
         >
         Websites Designs Agency takes pride in its content clientele that returns to us for further services time and again. It is a design agency packed with not only skills and experience, but also passion, energy and dedication towards its services. It is not only some logos that we design but tremendous brand identities that we erect in our workplace

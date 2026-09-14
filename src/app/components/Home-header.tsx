@@ -104,7 +104,7 @@ export default function Header() {
                         title: "LOGO DESIGN",
                         desc: "Get A Logo That Defines Who You Are",
                         icon: "/iamge/design007.webp",
-                        link: "/services/logo-design",
+                        link: "/Logo-Design",
                       },
                       {
                         title: "BRANDING",
@@ -276,7 +276,7 @@ export default function Header() {
               </summary>
 
               <div className="mt-4 pl-4 flex flex-col gap-3 text-sm sm:text-base text-white/90">
-                <Link href="/services/logo-design">
+                <Link href="/Logo-Design">
                   Logo Design
                 </Link>
 

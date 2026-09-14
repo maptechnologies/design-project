@@ -1,98 +1,108 @@
 "use client";
-import React from "react";
 
-// Use public folder image or online image URL
-const workImage = "/iamge/how-we-img.webp";
+/**
+ * HowWeWork.tsx
+ * "How We Work" section.
+ * Cards are white/bordered by default, narrower width but same height.
+ * On hover: teal gradient + soft shadow (no scaling).
+ * Fully responsive across mobile / tablet / desktop.
+ */
 
-const steps = [
+interface Step {
+  number: string;
+  title: string;
+  desc: string;
+}
+
+const steps: Step[] = [
   {
     number: "01",
-    title: "Be In Control",
-    text: "You choose whether to mint your NFTs on Blockparty, Ethereum, Solana, and others.",
+    title: "Design Brief",
+    desc: "The process begins with your delivery of what you have in mind for the logo that is going to go ahead and represent your brand for you. This is what we begin the construction of the logo form.",
   },
   {
     number: "02",
-    title: "Decide your Drop",
-    text: "Choo whether to create unique NFTs, Multiples Editions, Sales, Auctions and collection drops.",
+    title: "Research & Sketch",
+    desc: "Now that we are clear with what ingredients must be included to brew the perfect logo for you. Our designers will make a concept and make a draft to begin the collaborative design process.",
   },
   {
     number: "03",
-    title: "Expert Artists",
-    text: "Bring your own idea to life and put experienced artists to create your NFTs that go viral..",
+    title: "Revision",
+    desc: "Once we are satisfied with our delivery, we share it with the client. We are however completely open for constructive feedback and revisions.",
   },
   {
     number: "04",
-    title: "Select Whats Trending",
-    text: "You can choose to see trends that are not tailored for you by selecting a specific trend.",
+    title: "Final Delivery",
+    desc: "After having the files reviewed by the client and after having the errors removed, we deliver the project and all the necessary format files.",
   },
 ];
 
-const HowWeWork: React.FC = () => {
+export default function HowWeWork() {
   return (
-    <div className="relative min-h-screen bg-gradient-to-br from-sky-50 via-white to-sky-100 flex flex-col items-center justify-center p-6 overflow-hidden">
-      <h2 className="text-4xl font-extrabold text-gray-800 mb-12 text-center">
-        How We Work
-      </h2>
+    <section className="relative w-full bg-white py-10 sm:py-14 lg:py-16 px-4 sm:px-6 overflow-hidden">
+      {/* ================= BACKGROUND GRID LINES ================= */}
+      <div
+        className="pointer-events-none absolute inset-0 hidden sm:block"
+        style={{
+          backgroundImage: `
+            linear-gradient(to right, #eaeaea 1px, transparent 1px),
+            linear-gradient(to bottom, #eaeaea 1px, transparent 1px)
+          `,
+          backgroundSize: "33.333% 50%",
+        }}
+      />
 
-      {/* Center Image */}
-      <div className="relative w-[340px] h-[220px] z-10 mb-16 shadow-2xl rounded-lg overflow-hidden">
-        <img
-          src={workImage}
-          alt="work process"
-          className="w-full h-full object-cover"
-        />
+      <div className="relative mx-auto max-w-6xl">
+        {/* HEADING */}
+        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 text-center mb-8 sm:mb-10">
+          How We Work
+        </h2>
+
+        {/* TOP ROW: Image + Card 01 */}
+        <div className="grid grid-cols-1 lg:grid-cols-[1.3fr_1fr] gap-0 sm:gap-0 mb-2 sm:mb-6">
+          <div className="w- h-56 sm:h-72 lg:h-full overflow-hidden">
+            <img
+              src="/iamge/design1.webp"
+              alt="How We Work"
+              className="w-full h-full object-cover"
+            />
+          </div>
+
+          <StepCard step={steps[0]} />
+        </div>
+
+        {/* BOTTOM ROW: Cards 02, 03, 04 */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-0 sm:gap-0">
+          <StepCard step={steps[1]} />
+          <StepCard step={steps[2]} />
+          <StepCard step={steps[3]} />
+        </div>
       </div>
-
-      {/* Floating Cards */}
-      <FloatingCard
-        position="top-[10%] left-[10%]"
-        delay="animate-float-slow"
-        data={steps[0]}
-      />
-      <FloatingCard
-        position="top-[10%] right-[10%]"
-        delay="animate-float-slow-delay"
-        data={steps[1]}
-      />
-      <FloatingCard
-        position="bottom-[10%] left-[10%]"
-        delay="animate-float-slow-delay"
-        data={steps[2]}
-      />
-      <FloatingCard
-        position="bottom-[10%] right-[10%]"
-        delay="animate-float-slow"
-        data={steps[3]}
-      />
-    </div>
+    </section>
   );
-};
-
-// ✅ Type-safe FloatingCard (no design change)
-interface FloatingCardProps {
-  position: string;
-  delay: string;
-  data: {
-    number: string;
-    title: string;
-    text: string;
-  };
 }
 
-const FloatingCard: React.FC<FloatingCardProps> = ({ position, delay, data }) => {
+function StepCard({ step }: { step: Step }) {
   return (
-    <div className={`absolute ${position} ${delay}`}>
-      <div className="w-72 backdrop-blur-md bg-white/70 border border-white/40 rounded-xl shadow-xl p-5 transition-all duration-500 hover:scale-105 hover:bg-sky-100 hover:shadow-2xl">
-        <h3 className="text-xl font-semibold text-sky-600 mb-2">
-          <span className="text-gray-400 font-bold text-2xl mr-2">
-            {data.number}
-          </span>
-          {data.title}
-        </h3>
-        <p className="text-sm text-gray-700 leading-relaxed">{data.text}</p>
-      </div>
+    <div
+      className="group relative border border-gray-200 w-[80%] mx-auto py-5 sm:py-6 lg:py-7 px-4 sm:px-5 flex flex-col justify-center
+      transition-all duration-300 ease-in-out cursor-pointer
+      hover:border-transparent
+      hover:bg-gradient-to-br hover:from-[#3fd8c9] hover:to-[#3fb6e0]
+      hover:shadow-[0_20px_45px_-10px_rgba(0,0,0,0.35)]"
+    >
+      <h3 className="flex items-baseline gap-2 text-lg sm:text-xl font-bold mb-2 sm:mb-3">
+        <span className="text-3xl sm:text-4xl font-extrabold text-gray-200 transition-colors duration-300 group-hover:text-white/40">
+          {step.number}
+        </span>
+        <span className="text-sky-400 transition-colors duration-300 group-hover:text-white">
+          {step.title}
+        </span>
+      </h3>
+
+      <p className="text-gray-600 text-sm leading-relaxed text-center transition-colors duration-300 group-hover:text-white">
+        {step.desc}
+      </p>
     </div>
   );
-};
-
-export default HowWeWork;
+}
