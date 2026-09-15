@@ -110,13 +110,13 @@ export default function Header() {
                         title: "BRANDING",
                         desc: "Effective And Strategized Branding",
                         icon: "/iamge/design008.webp",
-                        link: "/services/branding",
+                        link: "/Branding",
                       },
                       {
                         title: "WEB DESIGN & DEVELOPMENT",
                         desc: "Get A Website That Increases Conversion",
                         icon: "/iamge/design009.webp",
-                        link: "/services/web-design",
+                        link: "",
                       },
                       {
                         title: "E-COMMERCE",
