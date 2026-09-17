@@ -2,105 +2,54 @@ import React from 'react';
 
 const packages = [
   {
-    price: "$49",
-    title: "Basic Logo",
+    price: "$149",
+    title: "Startup Collateral",
     features: [
-      "3 Custom Logo Design Concepts",
-      "1 Dedicated Designer",
-      "4 Revisions",
-      "48 to 72 hours TAT",
-      "100% Unique Design Guarantee",
-      "100% Satisfaction Guarantee",
-      "Money Back Guarantee",
-      "Unlimited Revisions",
-    ],
-  },
-  {
-    price: "$129",
-    title: "Startup Logo",
-    features: [
-      "5 Custom Logo Design Concepts",
-      "By 2 Designers",
-      "48 to 72 hours TAT",
-      "All Final Files Format (AI, PSD, EPS, PNG, GIF, JPG, PDF)",
-      "100% Satisfaction Guarantee",
-      "100% Unique Design Guarantee",
-      "Money Back Guarantee",
-      "Unlimited Revisions",
-    ],
-  },
-  {
-    price: "$199",
-    title: "Professional Logo",
-    features: [
-      "UNLIMITED Logo Design Concepts",
-      "By 4 Designers",
+      "2 Stationery Design Set",
+      "FREE Fax Template",
+      "Print Ready Formats",
       "UNLIMITED Revisions",
-      "Stationary Design (Business Card, Letterhead, Envelope)",
-      "FREE MS Word Letterhead",
-      "48 to 72 hours TAT",
-      "All Final Files Format (AI, PSD, EPS, PNG, GIF, JPG, PDF)",
       "100% Satisfaction Guarantee",
-      "100% Unique Design Guarantee",
-      "Money Back Guarantee",
+      "Money Back Guarantee *",
       "Unlimited Revisions",
     ],
   },
   {
-    price: "$249",
-    title: "Elite Logo",
+    price: "$299",
+    title: "Collateral Classic",
     features: [
-      "UNLIMITED Logo Design Concepts",
-      "By 5 Award Winning Designers",
-      "Icon Design",
+      "2 Stationery Design Set",
       "UNLIMITED Revisions",
-      "FREE MS Word Letterhead",
-      "Free Email Signature",
-      "All Final Files Format (AI, PSD, EPS, PNG, GIF, JPG, PDF)",
+      "Flyer Design",
+      "Brochure Design (Bi-fold/Tri-fold)",
       "100% Satisfaction Guarantee",
-      "100% Unique Design Guarantee",
-      "Money Back Guarantee",
+      "Money Back Guarantee *",
       "Unlimited Revisions",
-      "48 to 72 hours TAT",
-    ],
-  },
-  {
-    price: "$349",
-    title: "Business Logo",
-    features: [
-      "UNLIMITED Logo Design Concepts",
-      "By 8 Award Winning Designers",
-      "UNLIMITED Revisions",
-      "2 Stationary Design Sets (Business Card, Letterhead, Envelope)",
-      "Icon Design",
-      "Double Sided Flyer Design / Bi-Fold Brochure",
-      "FREE MS Word Letterhead",
-      "Free Email Signature",
-      "All Final Files Format (AI, PSD, EPS, PNG, GIF, JPG, PDF)",
-      "100% Ownership Rights",
-      "100% Satisfaction Guarantee",
-      "100% Unique Design Guarantee",
     ],
   },
   {
     price: "$499",
-    title: "Gold Logo",
+    title: "Premium Collateral",
     features: [
-      "UNLIMITED Logo Design Concepts",
-      "By 8 Award Winning Designers",
-      "Icon Design",
+      "2 Stationery Design Set",
+      "Packaging Design",
       "UNLIMITED Revisions",
-      "2 Stationary Design Sets (Business Card, Letterhead, Envelope)",
-      "FREE MS Word Letterhead",
-      "Free Email Signature",
-      "3 Page Custom Website",
-      "2 Stock Photos",
-      "jQuery Slider",
-      "All Final Files Format (AI, PSD, EPS, PNG, GIF, JPG, PDF)",
-      "100% Ownership Rights",
+      "T-Shirt Design",
       "100% Satisfaction Guarantee",
-      "100% Unique Design Guarantee",
-      "Money Back Guarantee",
+      "Money Back Guarantee *",
+      "Unlimited Revisions",
+    ],
+  },
+  {
+    price: "$699",
+    title: "Unlimited Collateral",
+    features: [
+      "2 Stationery Design Set",
+      "Menu Card Design",
+      "T-Shirt Design",
+      "1 Banner Design",
+      "100% Satisfaction Guarantee",
+      "Money Back Guarantee *",
       "Unlimited Revisions",
     ],
   },
@@ -148,14 +97,15 @@ const PackagesTailwind = () => {
         }
       `}</style>
 
-      <h2 className="text-2xl sm:text-3xl text-black font-bold mb-2">Most Affordable Packages</h2>
+      <h2 className="text-2xl sm:text-3xl text-black font-bold mb-2">
+        Most Affordable Packages
+      </h2>
+
       <p className="text-gray-600 mb-8 sm:mb-10 text-sm sm:text-base max-w-2xl mx-auto">
         We are well aware of the competition. That is the reason why we have a fair pricing model. <br className="hidden sm:block" />
         We ensure quality over quantity on each order.
       </p>
 
-      {/* Changed from grid to flex-wrap so each card can have its own fixed width.
-          Adjust the w-* classes below (e.g. w-64, w-72, w-80) to control card width directly. */}
       <div className="flex flex-wrap justify-center gap-5 sm:gap-6 max-w-6xl mx-auto items-stretch">
         {packages.map((pkg, idx) => (
           <div
@@ -166,16 +116,25 @@ const PackagesTailwind = () => {
               <div className="text-4xl sm:text-5xl font-extrabold mb-3 text-white group-hover:text-sky-600 transition-colors duration-300">
                 {pkg.price}
               </div>
+
               <hr className="border-white border-opacity-40 group-hover:border-sky-300 mb-4 transition-colors duration-300" />
+
               <div className="text-base sm:text-lg font-semibold mb-4 text-white group-hover:text-sky-700 transition-colors duration-300">
                 {pkg.title}
               </div>
+
               <hr className="border-white border-opacity-40 group-hover:border-sky-300 mb-4 transition-colors duration-300" />
+
               <ul className="feature-list-scroll text-left space-y-2.5 pr-2 text-sm max-h-64 overflow-y-auto">
                 {pkg.features.map((feature, i) => (
                   <li key={i} className="flex items-start">
-                    <span className="text-white group-hover:text-sky-600 mr-2 mt-0.5 font-bold transition-colors duration-300">✓</span>
-                    <span className="text-white group-hover:text-gray-700 transition-colors duration-300">{feature}</span>
+                    <span className="text-white group-hover:text-sky-600 mr-2 mt-0.5 font-bold transition-colors duration-300">
+                      ✓
+                    </span>
+
+                    <span className="text-white group-hover:text-gray-700 transition-colors duration-300">
+                      {feature}
+                    </span>
                   </li>
                 ))}
               </ul>
@@ -185,11 +144,15 @@ const PackagesTailwind = () => {
               <button className="border-2 border-white group-hover:border-sky-500 rounded-full text-white group-hover:text-sky-600 font-bold py-2.5 px-6 sm:px-7 hover:bg-white hover:text-sky-600 transition whitespace-nowrap text-sm sm:text-base">
                 ORDER NOW
               </button>
+
               <div className="text-right leading-tight text-white group-hover:text-sky-700 transition-colors duration-300">
                 <div className="flex items-center justify-end gap-1 text-xs opacity-90">
                   Click here to <ChatIcon />
                 </div>
-                <div className="font-bold text-sm sm:text-base">Live Chat</div>
+
+                <div className="font-bold text-sm sm:text-base">
+                  Live Chat
+                </div>
               </div>
             </div>
           </div>

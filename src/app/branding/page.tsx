@@ -5,15 +5,14 @@ import { MessageCircle } from "lucide-react";
 import { motion } from "framer-motion";
 import Brand from "../components/Service-text1";
 import LOgoslider2 from "../components/Service-brand";
-import StatsSection from "../components/HomeHitting";
-import Package2 from "../components/Service-package2";
-import CTASection from "../components/Footer2";
-import Port2 from "../components/Service-bar2";
+import StatsSection from "../components/Home-2package";
+import PackagesTailwind from "../components/Service-package2";
+import LogoDesign from "../components/Service-bar2";
 import WorkProcess from "../components/Home-process";
-import ContactForm from "../components/Home-form";
 import Testimonials from "../components/Home-testimonial";
-import AnimatedContact from "../components/Home-contact";
-import Footer from "../components/Home-footer";
+import ContactSection from "../components/Home-form";
+import CtaBanner from "../components/Home-contact";
+
 
 export default function HeroSection() {
   const [name, setName] = useState("");
@@ -32,8 +31,8 @@ export default function HeroSection() {
 
   return (
     <>
-      <div className="  flex-col lg:flex-row items-center justify-between overflow-hidden">
-        <section className="relative flex min-h-screen w-full items-center overflow-hidden py-16 sm:py-20 md:py-14">
+      <div className="flex flex-col lg:flex-row items-center justify-between overflow-hidden">
+        <section className="relative flex min-h-[100svh] w-full items-center overflow-hidden py-20 sm:py-20 md:py-16 lg:py-14">
           {/* Background image */}
           <Image
             src="/iamge/design1.jpg"
@@ -46,26 +45,26 @@ export default function HeroSection() {
           {/* Subtle dark overlay */}
           <div className="absolute inset-0 -z-10 bg-black/15" />
 
-          <div className="relative mx-auto flex w-full max-w-5xl flex-col items-center gap-2 mt-18 px-4 sm:px-6 md:flex-row md:items-center md:justify-between md:gap-1 lg:px-8">
+          <div className="relative mx-auto flex w-full max-w-5xl flex-col items-center gap-6 mt-14 px-4 sm:px-6 sm:mt-18 md:mt-18 md:flex-row md:items-center md:justify-between md:gap-4 lg:px-8 lg:gap-1">
             {/* Left: copy + form */}
             <div className="flex w-full flex-col items-center text-center text-white sm:items-start sm:text-left md:w-[64%]">
-              <p className="text-sm font-3xl uppercase tracking-wide text-white/90 md:text-base">
+              <p className="text-xs font-semibold uppercase tracking-wide text-white/90 sm:text-sm md:text-base">
               GARNER THE ATTENTION AND CUSTOMERS
               </p>
 
-              <h1 className=" text-2xl font-bold leading-tight font-sans-serif sm:text-5xl lg:text-5xl">
+              <h1 className="mt-2 text-3xl font-bold leading-tight font-sans-serif sm:text-4xl md:text-5xl lg:text-5xl">
                That You Want With
                 <br />
                Our Branding <br/>Solutions
               </h1>
 
-              <p className="mt-5 max-w-md text-md font-sans-serif  text-white/90 md:text-base">
+              <p className="mt-4 max-w-md text-sm font-sans-serif text-white/90 sm:mt-5 sm:text-md md:text-base">
                 We deliver high quality branding services. Our services are well designed and we fulfill creative marketing needs of our customers that is the powerful way engaging more clients.
               </p>
 
               <form
                 onSubmit={handleSubmit}
-                className="mt-8 flex w-full max-w-md flex-col items-center gap-4 sm:items-start"
+                className="mt-6 flex w-full max-w-md flex-col items-center gap-4 sm:mt-8 sm:items-start"
               >
                 <div className="flex w-full flex-col overflow-hidden rounded-md bg-white shadow-sm sm:flex-row">
                   <input
@@ -93,17 +92,17 @@ export default function HeroSection() {
                   />
                 </div>
 
-                <div className="flex w-full flex-row  justify-center gap-3 sm:justify-start">
+                <div className="flex w-full flex-row flex-wrap justify-center gap-3 sm:justify-start">
                   <button
                     type="submit"
-                    className="rounded-full bg-[#312d2f] px-8 py-1 text-sm font-bold font-serif text-white hover:text-[#00a8e7] transition border-2 hover:bg-white"
+                    className="rounded-full bg-[#312d2f] px-6 py-2 text-xs font-bold font-serif text-white transition hover:bg-white hover:text-[#59adbe] border-2 sm:px-8 sm:py-1 sm:text-sm"
                   >
                     Submit Now
                   </button>
 
                   <button
                     type="button"
-                    className="flex items-center gap-2 rounded-full bg-[#312d2f] px-4 py-2 text-sm font-semibold text-white transition border-2 hover:bg-neutral-800"
+                    className="flex items-center gap-2 rounded-full bg-[#312d2f] px-4 py-2 text-xs font-bold font-serif text-white transition hover:bg-white hover:text-[#59adbe] border-2 sm:text-sm"
                   >
                     <MessageCircle size={16} />
                     Live Chat
@@ -120,7 +119,7 @@ export default function HeroSection() {
                 width={620}
                 height={545}
                 priority
-                className="hero-floating-image h-auto w-full max-w-[280px] object-contain sm:max-w-sm md:max-w-md lg:max-w-lg"
+                className="hero-floating-image h-auto w-full max-w-[220px] object-contain xs:max-w-[260px] sm:max-w-sm md:max-w-md lg:max-w-lg"
               />
             </div>
           </div>
@@ -148,16 +147,14 @@ export default function HeroSection() {
 
       <Brand />
       <LOgoslider2 />
-      <StatsSection />
-      <Package2 />
-      <Port2 />
-      <WorkProcess />
-      {/* <Footer2/> */}
-      <CTASection />
-      <Testimonials />
-      <ContactForm />
-      <AnimatedContact />
-      <Footer />
+      <StatsSection/>
+      <PackagesTailwind/>
+      <LogoDesign/>
+      <WorkProcess/>
+      <Testimonials/>
+      <ContactSection/>
+      <CtaBanner/>
+     
     </>
   );
 }

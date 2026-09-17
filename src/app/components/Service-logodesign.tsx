@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import React, { useState, useRef } from "react";
 
 interface CardData {
   image: string;
@@ -30,6 +29,13 @@ const cards: CardData[] = [
     title: "Emblem Logos",
     description:
       "This logo range relies on typography rather than much iconography to get the message across. these logos make use of letters to be creative. graphical techniques are used to illustrate the letters in a better way.",
+  },
+  {
+    image: "/iamge/design1 (21).png",
+    alt: "Wordmark Mark icon",
+    title: "Wordmark Mark",
+    description:
+      "Wordmark logo designs use bold typography to directly get the message across using the corporation or brand name. this type of logo designing requires good understanding of fonts and custom formatting for text.",
   },
   {
     image: "/iamge/design1 (21).png",
@@ -75,7 +81,7 @@ function Card({
         className="w-16 h-16 sm:w-18 sm:h-18 md:w-20 md:h-20 rounded-full flex items-center justify-center mb-5 sm:mb-6 overflow-hidden transition-colors duration-300"
         style={{ background: isActive ? "rgba(255,255,255,0.15)" : "transparent" }}
       >
-        <img src={card.image} alt={card.alt} className="w-full h-full object-cover rounded-full" />
+        <img src={card.image} alt={card.alt} className="w-full h-full object-cover rounded-full" draggable={false} />
       </div>
 
       <h3
@@ -97,80 +103,60 @@ function Card({
 
 export default function LogoTypesGrid() {
   const [activeIndex, setActiveIndex] = useState<number | null>(1);
-  const [slide, setSlide] = useState(0);
+  const scrollRef = useRef<HTMLDivElement>(null);
 
-  const goPrev = () => setSlide((s) => (s === 0 ? cards.length - 1 : s - 1));
-  const goNext = () => setSlide((s) => (s === cards.length - 1 ? 0 : s + 1));
+  const isDragging = useRef(false);
+  const startX = useRef(0);
+  const scrollLeftStart = useRef(0);
+
+  const handleMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
+    const el = scrollRef.current;
+    if (!el) return;
+    isDragging.current = true;
+    startX.current = e.pageX - el.offsetLeft;
+    scrollLeftStart.current = el.scrollLeft;
+    el.style.cursor = "grabbing";
+  };
+
+  const stopDragging = () => {
+    const el = scrollRef.current;
+    isDragging.current = false;
+    if (el) el.style.cursor = "grab";
+  };
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const el = scrollRef.current;
+    if (!el || !isDragging.current) return;
+    e.preventDefault();
+    const x = e.pageX - el.offsetLeft;
+    const walk = x - startX.current;
+    el.scrollLeft = scrollLeftStart.current - walk;
+  };
 
   return (
     <div className="w-full bg-white">
-      {/* ---------- Mobile / tablet: slider ---------- */}
-      <div className="lg:hidden relative">
-        <div className="overflow-hidden">
-          <div
-            className="flex transition-transform duration-500 ease-out"
-            style={{ transform: `translateX(-${slide * 100}%)` }}
-          >
-            {cards.map((card, index) => (
-              <div key={card.title} className="w-full flex-shrink-0">
-                <Card
-                  card={card}
-                  isActive={activeIndex === index}
-                  onEnter={() => setActiveIndex(index)}
-                  onLeave={() => setActiveIndex(null)}
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Arrows */}
-        <button
-          onClick={goPrev}
-          aria-label="Previous"
-          className="absolute left-2 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white shadow-md flex items-center justify-center text-gray-700 hover:text-[#0077E4] transition-colors"
-        >
-          <ChevronLeft size={20} />
-        </button>
-        <button
-          onClick={goNext}
-          aria-label="Next"
-          className="absolute right-2 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white shadow-md flex items-center justify-center text-gray-700 hover:text-[#0077E4] transition-colors"
-        >
-          <ChevronRight size={20} />
-        </button>
-
-        {/* Dots */}
-        <div className="flex justify-center gap-2 mt-4">
-          {cards.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setSlide(index)}
-              aria-label={`Go to slide ${index + 1}`}
-              className="h-2 rounded-full transition-all duration-300"
-              style={{
-                width: slide === index ? "22px" : "8px",
-                background:
-                  slide === index
-                    ? "linear-gradient(90deg, #0077E4 0%, #00C2F0 100%)"
-                    : "#d1d5db",
-              }}
-            />
-          ))}
-        </div>
-      </div>
-
-      {/* ---------- Desktop: static grid ---------- */}
-      <div className="hidden lg:grid lg:grid-cols-4">
+      <div
+        ref={scrollRef}
+        onMouseDown={handleMouseDown}
+        onMouseUp={stopDragging}
+        onMouseLeave={stopDragging}
+        onMouseMove={handleMouseMove}
+        className="flex overflow-x-auto select-none"
+        style={{ scrollbarWidth: "none", msOverflowStyle: "none", cursor: "grab" }}
+      >
         {cards.map((card, index) => (
-          <Card
-            key={card.title}
-            card={card}
-            isActive={activeIndex === index}
-            onEnter={() => setActiveIndex(index)}
-            onLeave={() => setActiveIndex(null)}
-            showBorder
-          />
+          <div
+            key={card.title + index}
+            className="flex-shrink-0 w-[85%] sm:w-1/2 lg:w-1/4"
+          >
+            <Card
+              card={card}
+              isActive={activeIndex === index}
+              onEnter={() => setActiveIndex(index)}
+              onLeave={() => setActiveIndex(null)}
+              showBorder
+            />
+          </div>
         ))}
       </div>
     </div>
