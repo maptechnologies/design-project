@@ -18,6 +18,11 @@ import AnimatedContact from "../components/Home-contact";
 import CTASection from "../components/Footer2";
 import Footer from "../components/Home-footer";
 import StatsSection from "../components/Home-2package";
+import AnimationProcess from "../components/Service-animation-process";
+import LogoTypesGrid from "../components/dev-card-slider";
+import PackagesTailwind from "../components/Service-package2";
+import PortfolioGrid from "../components/Service-bar3";
+import LogoDesign from "../components/Service-bar3";
 
 export default function HeroSection() {
   const [isFormOpen, setIsFormOpen] = useState(false);
@@ -158,16 +163,16 @@ export default function HeroSection() {
 
       {/* 🔽 Additional Sections */}
       <Brand2 />
-      <LOgoslider2 />
-      <StatsSection />
-      <Package2 />
-      <Port2 />
-      <WorkProcess />
+     <LogoTypesGrid/>
+     <StatsSection/>
+      <PackagesTailwind/>
+      <LogoDesign/>
       <CTASection />
       <Testimonials />
       <ContactForm />
       <AnimatedContact />
-      <Footer />
+      
+      
     </>
   );
 }

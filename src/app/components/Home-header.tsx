@@ -122,7 +122,7 @@ export default function Header() {
                         title: "E-COMMERCE",
                         desc: "Sell Your Products In The Best Way Possible",
                         icon: "/iamge/design010.webp",
-                        link: "/services/ecommerce",
+                        link: "/E-commerce",
                       },
                       {
                         title: "VIDEO ANIMATION",
